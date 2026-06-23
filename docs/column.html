@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM82ZX0BN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WM82ZX0BN1');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="公共部門は中小企業にとって未開拓の取引市場です。発注型の公募・調達の仕組み、発注者の種類、参入障壁の実像、案件を売上と戦略価値の両軸で評価する方法を、PSPA-Screenが解説します。" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>公共部門という、まだ開拓されていない取引市場｜PSPA-Screen コラム</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-2: #0b1020;
+      --panel: rgba(18, 27, 49, 0.82);
+      --panel-solid: #111a2e;
+      --panel-soft: #0d1527;
+      --line: rgba(167, 190, 255, 0.16);
+      --line-strong: rgba(167, 190, 255, 0.28);
+      --text: #edf3ff;
+      --muted: #9fb0ca;
+      --faint: #72819b;
+      --cyan: #56d8ff;
+      --cyan-2: #19b8ea;
+      --violet: #a78bfa;
+      --green: #63e6be;
+      --amber: #ffd166;
+      --red: #ff8f9a;
+      --shadow: 0 24px 80px rgba(0,0,0,.34);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+      --measure: 760px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 13% 6%, rgba(86,216,255,.13), transparent 26%),
+        radial-gradient(circle at 88% 4%, rgba(167,139,250,.11), transparent 28%),
+        linear-gradient(180deg, #070b14 0%, #09101e 46%, #070b14 100%);
+      font-family: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, -apple-system, sans-serif;
+      line-height: 1.85;
+      letter-spacing: .01em;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    img, svg { max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .measure { width: min(var(--measure), 100%); margin-inline: auto; }
+    /* container と measure を併用した本文要素は、measure 幅で頭打ちしつつ左右ガターを維持する */
+    .container.measure { width: min(var(--measure), calc(100% - 40px)); }
+    /* グリッド子要素の min-width:auto による横はみ出しを防ぐ */
+    .twocol > *, .flow-two > *, .quad > .cell, .quad-main,
+    .feature-item, .rung, .issuers > *, .issuer ul { min-width: 0; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: #bceeff; font-size: 13px; font-weight: 760;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--cyan); }
+    h1, h2, h3 { line-height: 1.3; letter-spacing: -.02em; }
+    h1 { font-size: clamp(32px, 5vw, 54px); margin: 0; }
+    h2 { font-size: clamp(25px, 3.3vw, 36px); margin: 0; }
+    h3 { font-size: 19px; margin: 0; }
+    p { margin: 0; }
+    .lead { font-size: clamp(17px, 2.05vw, 21px); color: #c5d2e8; }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; color: var(--faint); }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+
+    /* nav (shared with LP) */
+    .nav-wrap { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px); background: rgba(7,11,20,.72); border-bottom: 1px solid rgba(167,190,255,.10); }
+    nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; text-decoration: none; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(140deg, rgba(86,216,255,.26), rgba(167,139,250,.20)); border: 1px solid rgba(126,225,255,.38); box-shadow: 0 8px 24px rgba(25,184,234,.16); }
+    .brand-mark svg { width: 20px; }
+    .brand-sub { color: var(--faint); font-weight: 600; font-size: 11px; letter-spacing: .08em; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #b7c4da; text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { padding: 10px 16px; color: #061019 !important; background: #d8f6ff; border-radius: 999px; font-weight: 800; }
+
+    .btn { border: 1px solid var(--line-strong); border-radius: 12px; padding: 13px 19px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 9px; transition: transform .18s ease, border-color .18s ease, background .18s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); border-color: transparent; }
+    .btn-secondary { color: #dbe7f8; background: rgba(17,26,46,.64); }
+    .btn-secondary:hover { border-color: rgba(126,225,255,.48); }
+
+    /* article */
+    .col-hero { padding: 64px 0 30px; }
+    .col-hero h1 span { background: linear-gradient(90deg, #f5fbff 0%, #aeefff 48%, #c7b8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .col-hero .lead { margin-top: 22px; }
+    .crumb { color: var(--faint); font-size: 12px; letter-spacing: .04em; margin-bottom: 18px; }
+    .crumb a { color: #8fa1bd; text-decoration: none; }
+    .crumb a:hover { color: #cfe; }
+
+    article { padding: 18px 0 40px; }
+    article > .measure > * + * { margin-top: 20px; }
+    article h2 { margin-top: 14px; }
+    .block { margin-top: 56px; }
+    .block > * + * { margin-top: 20px; }
+    article p { color: #c2d0e6; font-size: 16.5px; }
+    article ul { margin: 0; padding-left: 20px; color: #b6c5dc; }
+    article li + li { margin-top: 7px; }
+    .lede-list li { font-size: 16px; }
+    .rule { height: 1px; background: var(--line); border: 0; margin: 56px auto; width: min(var(--measure), 100%); }
+
+    .quote { border-left: 3px solid rgba(126,225,255,.5); padding: 4px 0 4px 18px; color: #b8c6dd; }
+    .quote p { color: #aab9d2; font-style: italic; }
+
+    .note { border: 1px solid var(--line); border-left: 3px solid var(--amber); border-radius: 12px; background: rgba(255,209,102,.05); padding: 16px 18px; }
+    .note strong { color: #ffe3a5; display: block; margin-bottom: 4px; font-size: 13px; letter-spacing: .04em; }
+    .note p { color: #d8c79e; font-size: 14px; }
+    .gov { border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 12px; background: rgba(99,230,190,.05); padding: 16px 18px; }
+    .gov p { color: #b9e8d6; font-size: 14.5px; }
+
+    /* issuer cards */
+    .issuers { display: grid; gap: 16px; }
+    .issuer { border: 1px solid var(--line); border-radius: var(--radius-sm); background: linear-gradient(180deg, rgba(17,26,46,.78), rgba(10,16,30,.86)); padding: 22px 24px; }
+    .issuer.primary { border-color: rgba(86,216,255,.34); box-shadow: 0 16px 45px rgba(25,184,234,.08); }
+    .issuer-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .issuer-head h3 { font-size: 20px; }
+    .tag { font-size: 10px; font-weight: 900; letter-spacing: .08em; padding: 4px 9px; border-radius: 999px; }
+    .tag.main { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); }
+    .tag.spec { color: #d8c0ff; background: rgba(167,139,250,.14); border: 1px solid rgba(167,139,250,.4); }
+    .issuer p { margin-top: 12px; }
+    .issuer ul { margin-top: 12px; columns: 2; column-gap: 26px; }
+    @media (max-width: 560px) { .issuer ul { columns: 1; } }
+
+    /* stakeholder flow */
+    .flow { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, rgba(16,26,48,.9), rgba(9,15,29,.92)); padding: 26px; display: grid; gap: 0; }
+    .flow-node { border: 1px solid var(--line); border-radius: 14px; background: #0b1324; padding: 16px 18px; }
+    .flow-node .lbl { color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .flow-node h4 { margin: 6px 0 0; font-size: 15px; }
+    .flow-node ul { margin: 10px 0 0; padding-left: 18px; color: #9fb0ca; font-size: 12.5px; }
+    .flow-node ul li + li { margin-top: 4px; }
+    .flow-arrow { justify-self: center; color: #50607a; font-size: 20px; line-height: 1; padding: 9px 0; }
+    .flow-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .flow-two { grid-template-columns: 1fr; } }
+
+    /* quadrant */
+    .quad-wrap { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: stretch; }
+    .axis-y { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad-main { display: grid; gap: 8px; }
+    .quad-top, .quad-bottom { text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cell { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: rgba(12,19,35,.74); }
+    .cell h4 { margin: 0; font-size: 15px; }
+    .cell p { margin-top: 6px; color: #93a3bd; font-size: 12.5px; }
+    .cell.go { border-color: rgba(99,230,190,.34); }
+    .cell.invest { border-color: rgba(167,139,250,.3); }
+    .cell.cash { border-color: rgba(86,216,255,.28); }
+    .cell.nogo { border-color: rgba(255,143,154,.26); }
+    .quad-x { display: grid; grid-template-columns: 1fr 1fr; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+    .quad-x span:last-child { text-align: right; }
+
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 620px) { .twocol { grid-template-columns: 1fr; } }
+    .mini-panel { border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(14,22,40,.7); padding: 20px 22px; }
+    .mini-panel h4 { margin: 0 0 12px; font-size: 14px; color: #d7e5f8; }
+    .mini-panel ul { margin: 0; padding-left: 18px; color: #aab9cf; font-size: 13.5px; }
+
+    /* ladder */
+    .ladder { display: grid; gap: 0; }
+    .rung { display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: center; }
+    .rung .dot { width: 12px; height: 12px; border-radius: 999px; background: linear-gradient(135deg, #35caef, #a78bfa); margin: 0 auto; position: relative; }
+    .rung:not(:last-child) .dot::after { content: ""; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background: #2f3f5e; }
+    .rung .txt { padding: 7px 0; color: #c2d0e6; font-size: 15px; }
+    .rung.peak .txt { color: #d8f6ff; font-weight: 700; }
+
+    /* feature list */
+    .feature-list { display: grid; gap: 12px; }
+    .feature-item { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+    .check { width: 20px; height: 20px; border-radius: 7px; display: grid; place-items: center; background: rgba(99,230,190,.09); color: var(--green); border: 1px solid rgba(99,230,190,.24); font-size: 11px; font-weight: 900; }
+    .feature-item p { color: #c2d0e6; font-size: 14.5px; }
+
+    .thesis { border: 1px solid rgba(86,216,255,.26); border-radius: var(--radius); background: radial-gradient(circle at 90% 10%, rgba(167,139,250,.16), transparent 36%), #0e172a; padding: 26px 28px; }
+    .thesis p { color: #d8f6ff; font-weight: 800; font-size: 17px; line-height: 1.9; }
+
+    .cta-panel { border-radius: 24px; border: 1px solid rgba(86,216,255,.26); background: radial-gradient(circle at 85% 15%, rgba(167,139,250,.18), transparent 32%), radial-gradient(circle at 8% 85%, rgba(86,216,255,.15), transparent 32%), #0e172a; padding: 36px; box-shadow: var(--shadow); }
+    .cta-panel h2 { font-size: 26px; }
+    .cta-panel p { color: #a9b8cd; margin-top: 14px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+    footer { border-top: 1px solid var(--line); padding: 34px 0 44px; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: flex-end; }
+    .footer-links a { color: #71809a; font-size: 11px; text-decoration: none; }
+    .footer-links a:hover { color: #b6c6dc; }
+
+    @media (max-width: 820px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+      .cta-panel { padding: 26px 22px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .container.measure { width: min(var(--measure), calc(100% - 24px)); }
+      .col-hero { padding: 44px 0 24px; }
+      .block { margin-top: 44px; }
+      .rule { margin: 44px auto; }
+      .cta-panel { padding: 22px 18px; }
+      .cta-actions .btn { width: 100%; }
+      .flow { padding: 20px; }
+      .issuer { padding: 20px; }
+    }
+    @media (max-width: 420px) {
+      .quad-wrap { grid-template-columns: 18px 1fr; gap: 8px; }
+      .quad { gap: 8px; }
+      .cell { padding: 14px; }
+      .mini-panel { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <div class="container">
+      <nav aria-label="主要ナビゲーション">
+        <a class="brand" href="index.html" aria-label="PSPA-Screen サービスページへ">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-width="1.7" stroke-linecap="round"/>
+              <circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"/>
+              <path d="m19.7 13.7 1.8 1.8" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>PSPA-Screen <span class="brand-sub">PUBLIC-SECTOR PURSUIT INTELLIGENCE</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#capabilities">機能</a>
+          <a href="index.html#delivery">提供形態</a>
+          <a href="index.html#roadmap">ロードマップ</a>
+          <a class="nav-cta" href="index.html#contact">設計パートナー相談</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="col-hero">
+      <div class="container measure">
+        <div class="crumb"><a href="index.html">PSPA-Screen</a> ／ コラム</div>
+        <div class="eyebrow">Column — Public Procurement 101</div>
+        <h1><span>公共部門は、まだ開拓されていない取引市場です</span></h1>
+        <p class="lead">国・自治体・研究機関は、日常的に外部企業からソフトウェア開発・調査・運用支援などを調達しています。その仕組み、発注者の種類、参入障壁の実像、そして案件を「売上」と「戦略価値」の両軸で評価する方法を整理します。</p>
+      </div>
+    </section>
+
+    <article>
+      <div class="container measure">
+        <p>公共部門の仕事は、一部の大企業や専門業者だけのものではありません。</p>
+        <p>国、省庁、地方自治体、独立行政法人、研究開発法人、大学、研究機関などは、日常的に外部企業からソフトウェア開発、調査、コンサルティング、データ整備、運用支援、研究開発支援などを調達しています。</p>
+        <p>これらの案件は、公開された手続に基づいて事業者を募集するため、既存の取引関係だけに依存しません。これまで接点のなかった企業にも、要件を満たして提案する機会があります。</p>
+        <p>公募案件は、単なる営業リストではありません。</p>
+        <ul class="lede-list">
+          <li>継続的な案件供給による、売上とキャッシュフローの安定化</li>
+          <li>国や自治体、研究機関という新しい取引先の開拓</li>
+          <li>特定分野における実績、信用、プレゼンスの形成</li>
+          <li>次の提案で再利用できる業務実績と組織知の蓄積</li>
+        </ul>
+        <p>公共部門への参入は、受注機会を増やすだけでなく、企業の事業ポジションそのものを変える可能性があります。</p>
+      </div>
+
+      <!-- 公募案件とは -->
+      <div class="container measure block">
+        <div class="eyebrow">What</div>
+        <h2>「公募案件」とは何か</h2>
+        <p>「公募」という言葉は広く使われますが、制度上の性質は一様ではありません。PSPA-Screenが主に対象とするのは、行政機関等が業務の実施者を選び、契約の対価を支払う<strong>発注型の公募・調達案件</strong>です。</p>
+
+        <div class="twocol">
+          <div class="mini-panel">
+            <h4>発注型の公募・調達（中心に扱う）</h4>
+            <p class="small" style="margin:0 0 10px">発注者が仕様・予算・契約条件・参加資格・評価方法を示し、企業から入札書や企画提案書を募ります。</p>
+            <ul>
+              <li>一般競争入札 / 指名競争入札</li>
+              <li>企画競争・公募型プロポーザル</li>
+              <li>総合評価方式</li>
+              <li>見積合わせ</li>
+              <li>委託調査・委託研究</li>
+              <li>技術提案を伴う役務調達</li>
+            </ul>
+          </div>
+          <div class="mini-panel">
+            <h4>助成・補助型の公募（対象外）</h4>
+            <p class="small" style="margin:0">補助金・助成金・研究費等は、事業者が自ら行う事業に資金を交付する制度です。調達案件では、発注者が必要とする業務を受注者が契約に基づいて実施します。PSPA-Screenは、原則として後者の<strong>契約獲得を目的とする案件</strong>を中心に扱います。</p>
+          </div>
+        </div>
+        <p>価格だけで決まる案件もありますが、コンサルティング、IT、調査研究等では、実施体制、過去実績、技術提案、工程、品質管理等を総合的に評価する案件が少なくありません。</p>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- 発注者 -->
+      <div class="container measure block">
+        <div class="eyebrow">Who buys</div>
+        <h2>公共調達を構成する発注者</h2>
+        <p>公共部門は、一つの市場ではありません。発注者の制度、目的、案件規模、評価方法によって、求められる戦略が異なります。</p>
+        <p>そして、すべての発注者を同時に狙う必要はありません。実績の少ない段階では、一般的なソフトウェア開発・役務で実績ベースに戦える<strong>地方自治体・中央省庁の一般役務案件</strong>が、現実的な入口（主オンランプ）になります。高度な専門性が問われる<strong>独立行政法人・研究開発法人・大学・研究機関</strong>は、最初の入口ではなく、実績を積んだ後に広げる<strong>専門領域</strong>として位置づけるのが堅実です。</p>
+      </div>
+
+      <div class="container measure" style="margin-top:22px">
+        <div class="issuers">
+          <div class="issuer primary">
+            <div class="issuer-head"><h3>地方自治体</h3><span class="tag main">主たる入口</span></div>
+            <p>都道府県、市区町村、広域連合等が、地域行政に必要な業務を調達します。主な対象は次のとおりです。</p>
+            <ul>
+              <li>Webサイト・業務システムの構築</li>
+              <li>データ入力・データ整備</li>
+              <li>DX・業務改善支援</li>
+              <li>調査・計画策定</li>
+              <li>広報・コンテンツ制作</li>
+              <li>地域産業支援</li>
+              <li>セミナー・研修</li>
+              <li>運用保守</li>
+            </ul>
+            <p>全国に1,700を超える自治体があり、案件の母数は研究機関より桁違いに大きいことが特徴です。高度な専門知識を前提としない一般的なソフトウェア開発・保守・データ整備等が多く、実績ベースで戦える案件が見つけやすい領域です。</p>
+            <p>官公需に関する施策により、新規参入の中小企業に過去実績を過度に求めない運用や、地域要件・地域精通度の加点など、中小企業への制度的な後押しが働く場合があります。地域要件によって競争が局所化し、域内の中小企業が相対的に勝ちやすい構造も見られます。一方で、自治体ごとに参加資格や電子調達システムが異なるため、全国を無差別に追うより、対象地域と業務領域を絞る戦略が現実的です。</p>
+          </div>
+
+          <div class="issuer primary">
+            <div class="issuer-head"><h3>国・中央省庁</h3><span class="tag main">主たる入口</span></div>
+            <p>政策の実施、行政システムの整備、調査、広報、制度設計支援等を外部調達します。案件には全国規模のものが多く、参加資格、情報セキュリティ、業務実績、実施体制等が重視される傾向があります。</p>
+            <p>一方、小規模な役務案件や調査案件では、中小企業が参加可能な案件も存在します。自治体と並び、一般役務系の案件は実績を積む入口として活用できます。</p>
+          </div>
+
+          <div class="issuer">
+            <div class="issuer-head"><h3>独立行政法人・研究開発法人・大学・研究機関</h3><span class="tag spec">専門領域</span></div>
+            <p>独立行政法人・研究開発法人は、行政政策、産業振興、研究開発、標準化、技術評価等を担います。大学、共同利用機関、国立研究所等も、研究設備、情報システム、データ解析、研究支援、技術調査等を外部調達します。</p>
+            <p>この領域は、高度な専門性を要する案件が多い一方、調査、システム開発、データ処理、プロジェクト管理等の一般的な役務も発注されます。研究実績、論文、特許、実証経験等が受注者要件に含まれる場合もあります。専門性と機微性が高い分、提案の根拠を厳密に管理できる事業者にとっては差別化しやすい領域です。</p>
+            <p>同時に、報酬の上限設定や経費の実費精算など、<strong>受注者にとって粗利が薄くなりやすい契約構造</strong>を持つ案件も少なくありません。そのため、この領域は「最初の入口」ではなく、自治体・省庁の一般役務で実績を積んだうえで広げる専門領域として、<strong>収益性を必ず検証してから選別的に狙う</strong>のが現実的です。AI安全性、医療、創薬、地理空間、宇宙、材料、通信等の案件を受注することは、短期の売上以上に、その後の同分野での提案に利用できる実績・専門ポジションの形成として価値を持ちます。</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- ステークホルダー -->
+      <div class="container measure block">
+        <div class="eyebrow">Who decides</div>
+        <h2>公共調達に関わる主なステークホルダー</h2>
+        <p>公募案件は、発注者と受注者だけで成立するものではありません。</p>
+      </div>
+      <div class="container measure" style="margin-top:20px">
+        <div class="flow">
+          <div class="flow-node"><span class="lbl">UPSTREAM</span><h4>政策・行政目的</h4></div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-two">
+            <div class="flow-node">
+              <span class="lbl">発注機関</span>
+              <h4>必要とする側 × 管理する側</h4>
+              <ul>
+                <li>原課・事業部門</li>
+                <li>調達・契約部門</li>
+                <li>技術評価者</li>
+                <li>法務・会計・情報セキュリティ部門</li>
+                <li>外部有識者・審査委員</li>
+              </ul>
+            </div>
+            <div class="flow-node">
+              <span class="lbl">応札企業</span>
+              <h4>提案する側</h4>
+              <ul>
+                <li>営業・事業開発</li>
+                <li>提案責任者</li>
+                <li>技術者・コンサルタント</li>
+                <li>管理・法務・経理 / 経営者</li>
+                <li>協力会社・再委託先</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node"><span class="lbl">公募・入札・企画競争 → 契約・業務実施</span><h4>契約・業務実施・実績形成</h4></div>
+        </div>
+      </div>
+      <div class="container measure" style="margin-top:20px">
+        <p>発注者の内部でも、案件を必要とする事業部門と、契約手続を管理する調達部門では関心が異なります。</p>
+        <ul>
+          <li>事業部門は、技術力、課題理解、実行力を評価する</li>
+          <li>調達部門は、参加資格、形式要件、公平性、契約条件を確認する</li>
+          <li>評価者は、提案書に記載された実績と体制の妥当性を判断する</li>
+        </ul>
+        <p>したがって、優れた技術を持っているだけでは十分ではありません。自社の能力を、公募要件と評価基準に対応した形で提示する必要があります。</p>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- 参入障壁 -->
+      <div class="container measure block">
+        <div class="eyebrow">Barrier</div>
+        <h2>公共部門への参入障壁は、想像より低い</h2>
+        <p>公共案件への参入経験がない企業は、しばしば次のように考えます。</p>
+        <div class="quote">
+          <p>大企業でなければ参加できないのではないか。官公庁との取引実績がなければ無理なのではないか。特殊な資格や人脈が必要なのではないか。</p>
+        </div>
+        <p>実際には、すべての案件が高い参加障壁を持つわけではありません。</p>
+        <p>中央省庁等の物品・役務調達では、全省庁統一資格が求められる場合があります。この資格には等級があり、新規参入企業や小規模事業者はD等級から始めることが一般的です。資格の取得自体は、新設法人や個人事業主でも申請でき、難度の高いものではありません。</p>
+        <p>D等級だから公共案件に参加できない、ということではありません。対象となる予定価格帯や案件区分には制約がありますが、小型案件から実績を積む入口として利用できます。地方自治体については、全省庁統一資格とは別に、自治体独自の入札参加資格が設けられている場合があります。</p>
+        <p>したがって、実質的な参入障壁は、<strong>資格取得そのものよりも</strong>次の点にあります。</p>
+        <ul>
+          <li>自社が参加可能な案件を見分けること</li>
+          <li>要件を満たす実績・人員・体制を確認すること</li>
+          <li>収益性のある案件を選別すること</li>
+          <li>提案内容を評価基準に対応させること</li>
+          <li>記載した実績を証明可能な状態にすること</li>
+        </ul>
+        <p>公共案件への参入は、資格を取れば自動的に成功するものではありません。しかし、自社に合う案件を選び、小型案件から実績を積むことで、段階的に参入可能領域を広げることができます。</p>
+        <div class="note">
+          <strong>注記</strong>
+          <p>参加資格、等級、予定価格帯、地域要件は、発注機関、案件区分、制度改定によって異なります。個別案件では必ず公告・入札説明書等の確認が必要です。</p>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- 単発ではない -->
+      <div class="container measure block">
+        <div class="eyebrow">Asset, not lead</div>
+        <h2>公募案件は「単発の営業先」ではない</h2>
+        <p>公共案件を案件単位でしか見ない場合、評価基準は単純になります。「この案件は受注できるか」「いくらの売上になるか」。しかし、公共部門への参入では、個別案件の受注額だけでなく、その案件が将来どのような事業資産になるかを評価する必要があります。</p>
+
+        <div class="twocol" style="margin-top:8px">
+          <div class="mini-panel">
+            <h4>1. 安定的な案件供給源</h4>
+            <p class="small" style="margin:0">国や自治体等の調達は、年度予算・政策・行政サービス・法定業務に基づいて発生します。保守・更新・追加調査・翌年度事業として継続する場合もあり、売上構成の分散とパイプライン形成の手段になり得ます。ただし継続性は保証されず、契約条件・支払時期・粗利・要員拘束を含めて判断します。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>2. 新しい取引先への入口</h4>
+            <p class="small" style="margin:0">公共調達では、公告された条件を満たせば、既存取引のない企業でも参加可能です。受注に至れば、これまで接点のなかった行政機関・研究機関・大学等との取引実績を得られます。既存顧客の延長ではない、新しい取引市場への入口です。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>3. 実績の形成</h4>
+            <p class="small" style="margin:0 0 8px">最初の案件の受注は、その売上を得るだけではありません。次の実績が、次回提案で提示可能になります。</p>
+            <ul>
+              <li>官公庁・自治体との契約実績</li>
+              <li>特定業務・特定技術領域の実証実績</li>
+              <li>プロジェクト管理・品質管理実績</li>
+              <li>公的機関との協働実績</li>
+            </ul>
+            <p class="small" style="margin:8px 0 0">一件目の受注は、二件目以降の参入障壁を下げます。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>4. ドメインにおけるプレゼンス</h4>
+            <p class="small" style="margin:0 0 8px">研究開発・AI・医療・通信・宇宙・環境等では、「何ができるか」だけでなく「どの機関と、どのテーマで仕事をしたか」がポジションに影響します。特定の研究開発法人・大学との契約実績は、次の効果を持ち得ます。</p>
+            <ul>
+              <li>同分野の公募で提示できる実績になる</li>
+              <li>民間顧客への信用補完・採用材料になる</li>
+              <li>共同研究・コンソーシアム参加の入口になる</li>
+              <li>自社の専門領域を対外的に明確化できる</li>
+            </ul>
+          </div>
+        </div>
+        <p>この意味で、公共案件は単なる売上機会ではなく、<strong>市場内での立ち位置を形成する戦略投資</strong>でもあります。ただし、こうしたプレゼンス形成の効果が大きいのは主に専門領域（研究機関・大学等）であり、契約構造によっては粗利が薄くなりやすい点に注意が必要です。<strong>戦略価値は、必ず収益性の検証と両立させて判断します。</strong></p>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- 2軸評価 -->
+      <div class="container measure block">
+        <div class="eyebrow">How to choose</div>
+        <h2>案件を「売上」と「戦略価値」の両方で評価する</h2>
+        <p>すべての公募案件に応札する必要はありません。案件は、少なくとも二つの軸で評価すべきです。</p>
+      </div>
+      <div class="container measure" style="margin-top:20px">
+        <div class="quad-wrap">
+          <div class="axis-y">戦略価値</div>
+          <div class="quad-main">
+            <div class="quad-top">▲ 戦略価値が高い</div>
+            <div class="quad">
+              <div class="cell invest"><h4>将来投資型</h4><p>実績・関係構築を重視。短期の粗利は低くても、戦略的実績として取りに行く。</p></div>
+              <div class="cell go"><h4>優先応札</h4><p>収益性と戦略性を両立。最優先で勝ちにいく。</p></div>
+              <div class="cell nogo"><h4>原則 No-Go</h4><p>工数・リスクを再検討。安易に応札しない。</p></div>
+              <div class="cell cash"><h4>収益案件</h4><p>キャッシュフローを重視。回転効率で取る。</p></div>
+            </div>
+            <div class="quad-x"><span>◀ 収益性が低い</span><span>収益性が高い ▶</span></div>
+            <div class="quad-bottom">▼ 戦略価値が低い</div>
+          </div>
+        </div>
+      </div>
+      <div class="container measure" style="margin-top:22px">
+        <div class="twocol">
+          <div class="mini-panel">
+            <h4>収益性の評価</h4>
+            <ul>
+              <li>契約金額 / 想定工数 / 必要人員</li>
+              <li>再委託費 / 支払条件 / 契約期間</li>
+              <li>報告・監査負担 / 粗利 / 機会費用</li>
+            </ul>
+          </div>
+          <div class="mini-panel">
+            <h4>戦略価値の評価</h4>
+            <ul>
+              <li>新規取引先としての重要性 / 対象ドメイン親和性</li>
+              <li>次回案件への再利用可能性 / 実績としての訴求力</li>
+              <li>継続案件・共同研究への発展性 / 採用・広報効果 / 競合ポジショニング</li>
+            </ul>
+          </div>
+        </div>
+        <p>短期的な粗利が低い案件でも、戦略的実績として価値を持つ場合があります。反対に、契約金額が大きくても、過大な要員拘束・実費精算・厳しい責任条件等によって、事業上の価値が低い場合があります。必要なのは、案件数を増やすことではなく、<strong>自社の成長経路に適合する案件を選ぶこと</strong>です。</p>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- ステップ -->
+      <div class="container measure block">
+        <div class="eyebrow">Steps</div>
+        <h2>公共部門参入のステップ</h2>
+        <div class="twocol" style="margin-top:8px">
+          <div class="mini-panel">
+            <h4>Step 1 — 自社の現在地を整理する</h4>
+            <p class="small" style="margin:0">最初に確認すべきは、案件情報ではなく自社の状態です。保有資格・対応地域・受注可能金額・技術領域・業務実績・所属人員・外部パートナー・セキュリティ認証・財務／契約上の制約。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>Step 2 — 最初の対象市場を絞る</h4>
+            <p class="small" style="margin:0">最初の入口は、一般役務で実績ベースに戦える自治体・省庁案件が現実的です。自社所在地周辺の自治体／既存顧客と近い業務領域／過去実績を転用できる役務／小規模な調査・開発案件／継続的に案件を出す特定機関。研究機関・大学等の専門領域は、実績が積み上がった後の拡張先として段階的に加えます。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>Step 3 — 最初の一件を獲得する</h4>
+            <p class="small" style="margin:0">最大規模より、受注可能性と実績価値のバランスが重要です。要件を満たす／競争が過度に激しくない／実施体制を無理なく組める／赤字リスクが低い／次の案件で提示可能な実績になる、案件を優先します。</p>
+          </div>
+          <div class="mini-panel">
+            <h4>Step 4 — 実績を再利用可能な形で残す</h4>
+            <p class="small" style="margin:0">契約終了だけでは次の資産になりません。契約名称・発注機関・実施期間・業務概要・担当範囲・実施体制・成果・証明資料・開示可能範囲・類似案件への適用可能性を整理します。</p>
+          </div>
+        </div>
+      </div>
+      <div class="container measure" style="margin-top:22px">
+        <h3 style="margin-bottom:16px">Step 5 — 取引領域を拡張する</h3>
+        <div class="ladder">
+          <div class="rung"><div class="dot"></div><div class="txt">小型案件への参加</div></div>
+          <div class="rung"><div class="dot"></div><div class="txt">最初の契約実績</div></div>
+          <div class="rung"><div class="dot"></div><div class="txt">同種案件への再応募</div></div>
+          <div class="rung"><div class="dot"></div><div class="txt">複数機関での実績形成</div></div>
+          <div class="rung"><div class="dot"></div><div class="txt">上位規模・高専門案件（専門領域への拡張）</div></div>
+          <div class="rung peak"><div class="dot"></div><div class="txt">対象ドメインでの認知とプレゼンス</div></div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- PSPAが支援すること -->
+      <div class="container measure block">
+        <div class="eyebrow">PSPA-Screen</div>
+        <h2>PSPA-Screenが支援すること</h2>
+        <p>PSPA-Screenは、案件を大量に表示するだけの検索サービスではありません。自社の資格、実績、体制、戦略に照らして案件を選別し、判断と提案の根拠を蓄積するための公募応札インテリジェンスです。現在は、次のような機能を提供しています（抜粋）。</p>
+        <div class="feature-list" style="margin-top:4px">
+          <div class="feature-item"><span class="check">✓</span><p>発注機関別の案件取得と一次トリアージ</p></div>
+          <div class="feature-item"><span class="check">✓</span><p>親和性・フィジビリティ等の多軸評価と案件評価レポート</p></div>
+          <div class="feature-item"><span class="check">✓</span><p><strong>資格レディネス診断</strong>（保有資格・地域・金額帯・営業品目と案件要件の突合）</p></div>
+          <div class="feature-item"><span class="check">✓</span><p>ファクト台帳・応札履歴台帳による根拠管理と重複応募回避</p></div>
+          <div class="feature-item"><span class="check">✓</span><p>提案前の確認ゲート（未検証・開示未確認・個人名参画表現の検出）</p></div>
+          <div class="feature-item"><span class="check">✓</span><p>顧客単位のデータ分離と署名ライセンスによる利用範囲管理</p></div>
+        </div>
+        <div class="gov">
+          <p>PSPA-Screenは、送信・自動応募の経路を構造的に持ちません。最終的な応札判断と提出操作は、利用企業が行います。</p>
+        </div>
+        <p>整備中の拡張（自治体・省庁向けアダプタの拡充、招待制ホスティング、提案書作成支援など）や、海外展開を含む将来計画の詳細は、<a href="index.html" style="color:#9fe3ff;text-decoration:none">サービスページ</a>をご覧ください。</p>
+      </div>
+
+      <!-- 目指すもの -->
+      <div class="container measure block">
+        <div class="eyebrow">Mission</div>
+        <h2>PSPA-Screenが目指すもの</h2>
+        <p>公共案件への参入で本当に難しいのは、案件を見つけることだけではありません。この案件は自社に合うのか／参加資格を満たしているのか／必要な実績を証明できるのか／体制を組めるのか／受注して利益が出るのか／戦略的に獲得する価値があるのか／過去の判断と実績を次に活かせるのか。</p>
+        <p>PSPA-Screenは、これらの問いを案件ごとに構造化し、公共部門への参入を一回限りの試行ではなく、継続的な事業開発プロセスに変えることを目指します。</p>
+        <div class="thesis">
+          <p>案件を探す。<br/>応札できるかを判断する。<br/>勝つための根拠を揃える。<br/>一件の実績を、次の機会につなげる。</p>
+        </div>
+      </div>
+
+      <!-- 対象企業 -->
+      <div class="container measure block">
+        <div class="eyebrow">For whom</div>
+        <h2>こんな企業を対象としています</h2>
+        <ul>
+          <li>これまで公共案件を営業対象として考えたことがない</li>
+          <li>官公庁・自治体との最初の取引実績を作りたい</li>
+          <li>公募案件を見ているが、Go／No-Go判断に時間がかかる</li>
+          <li>営業担当者だけでは専門要件を評価できない</li>
+          <li>技術実績はあるが、提案書に転用できる形で整理されていない</li>
+          <li>研究・技術分野で戦略的な実績を獲得したい</li>
+          <li>複数機関の案件情報と応札履歴を一元管理したい</li>
+          <li>提案書の記載根拠と証拠資料を対応させたい</li>
+          <li>小規模案件から公共部門への参入を始めたい</li>
+        </ul>
+      </div>
+
+      <!-- 運営について -->
+      <div class="container measure block">
+        <div class="eyebrow">About</div>
+        <h2>運営について</h2>
+        <p>PSPA-Screenは、icefog（個人運営）が開発・提供しています。公的研究機関・独立行政法人等の公募実務に継続的に関与するなかで、案件の選別、実績の検証、提出前の整合性確認こそが最も時間と神経を要する工程だと分かり、その工程を構造化するために生まれたツールです。</p>
+        <div class="gov">
+          <p>本ページでは、具体的な発注機関名・案件名・取引先名を記載していません。これは「<strong>確認済み（confirmed）かつ開示可能（disclosable）な事実だけを扱う</strong>」という、本サービスが提供する実績管理の原則そのものです。運営者の関与実績の詳細は、NDAのもとで個別にご説明します。</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="container measure block">
+        <div class="cta-panel">
+          <div class="eyebrow">Design Partner</div>
+          <h2>Design Partnerを募集しています</h2>
+          <p>PSPA-Screenは現在、招待制・個別契約によるclosed SaaSとしての提供を準備しています。初期のDesign Partnerとは、対象とする発注機関、追跡する案件分野、参加資格と受注可能範囲、評価基準、自社実績・人員情報、導入時のデータ移行、運用・フィードバック方法などを個別に設計します。</p>
+          <p><strong>公共案件への参入可能性を整理したい企業</strong>、または<strong>既存の公募営業を高度化したい企業</strong>を対象としています。</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="index.html#contact">サービスページの相談窓口へ</a>
+            <a class="btn btn-secondary" href="index.html">サービス内容を見る</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-width="1.7" stroke-linecap="round"/><circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"/></svg></span><span>PSPA-Screen</span></a>
+          <p class="small" style="margin-top:10px">Pre-α / 招待制closed SaaSとして提供準備中</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#capabilities">機能</a><a href="index.html#delivery">提供形態</a><a href="index.html#roadmap">ロードマップ</a><a href="index.html#pricing">料金案</a><a href="index.html#contact">導入相談</a><a href="mailto:yolcoyama@gmail.com">お問い合わせ</a>
+        </div>
+      </div>
+      <p class="small" style="margin-top:18px">本コラムは公共調達の一般的な解説であり、参加資格・等級・予定価格帯・地域要件は発注機関・案件区分・制度改定により異なります。個別案件では必ず公告・入札説明書等をご確認ください。© 2026 icefog.</p>
+    </div>
+  </footer>
+</body>
+</html>
