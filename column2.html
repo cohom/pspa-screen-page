@@ -1,0 +1,701 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WM82ZX0BN1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WM82ZX0BN1');
+  </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="公共調達で一者応札・応札不足が生じる構造を、発注者・事業者双方の取引コスト、情報非対称、既存事業者優位、仕様・契約条件から整理します。応札促進が価格、品質、市場参入、供給網の強靱性、調達への信頼に持つ社会的意義と、PSPA-Screenの役割を解説します。" name="description"/>
+<meta content="#0b1020" name="theme-color"/>
+<title>公募案件における応札不足の構造と応札促進の社会的意義｜PSPA-Screen コラム</title>
+<style>
+    :root {
+      --bg: #070b14;
+      --bg-2: #0b1020;
+      --panel: rgba(18, 27, 49, 0.82);
+      --panel-solid: #111a2e;
+      --panel-soft: #0d1527;
+      --line: rgba(167, 190, 255, 0.16);
+      --line-strong: rgba(167, 190, 255, 0.28);
+      --text: #edf3ff;
+      --muted: #9fb0ca;
+      --faint: #72819b;
+      --cyan: #56d8ff;
+      --cyan-2: #19b8ea;
+      --violet: #a78bfa;
+      --green: #63e6be;
+      --amber: #ffd166;
+      --red: #ff8f9a;
+      --shadow: 0 24px 80px rgba(0,0,0,.34);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+      --measure: 760px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 13% 6%, rgba(86,216,255,.13), transparent 26%),
+        radial-gradient(circle at 88% 4%, rgba(167,139,250,.11), transparent 28%),
+        linear-gradient(180deg, #070b14 0%, #09101e 46%, #070b14 100%);
+      font-family: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, -apple-system, sans-serif;
+      line-height: 1.85;
+      letter-spacing: .01em;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    img, svg { max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .measure { width: min(var(--measure), 100%); margin-inline: auto; }
+    /* container と measure を併用した本文要素は、measure 幅で頭打ちしつつ左右ガターを維持する */
+    .container.measure { width: min(var(--measure), calc(100% - 40px)); }
+    /* グリッド子要素の min-width:auto による横はみ出しを防ぐ */
+    .twocol > *, .flow-two > *, .quad > .cell, .quad-main,
+    .feature-item, .rung, .issuers > *, .issuer ul { min-width: 0; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: #bceeff; font-size: 13px; font-weight: 760;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--cyan); }
+    h1, h2, h3 { line-height: 1.3; letter-spacing: -.02em; }
+    h1 { font-size: clamp(32px, 5vw, 54px); margin: 0; }
+    h2 { font-size: clamp(25px, 3.3vw, 36px); margin: 0; }
+    h3 { font-size: 19px; margin: 0; }
+    p { margin: 0; }
+    .lead { font-size: clamp(17px, 2.05vw, 21px); color: #c5d2e8; }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; color: var(--faint); }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+
+    /* nav (shared with LP) */
+    .nav-wrap { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px); background: rgba(7,11,20,.72); border-bottom: 1px solid rgba(167,190,255,.10); }
+    nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; text-decoration: none; }
+    .brand-mark { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(140deg, rgba(86,216,255,.26), rgba(167,139,250,.20)); border: 1px solid rgba(126,225,255,.38); box-shadow: 0 8px 24px rgba(25,184,234,.16); }
+    .brand-mark svg { width: 20px; }
+    .brand-sub { color: var(--faint); font-weight: 600; font-size: 11px; letter-spacing: .08em; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #b7c4da; text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { flex: 0 0 auto; padding: 10px 16px; color: #061019 !important; background: #d8f6ff; border-radius: 999px; font-weight: 800; white-space: nowrap; }
+
+    .btn { border: 1px solid var(--line-strong); border-radius: 12px; padding: 13px 19px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 9px; transition: transform .18s ease, border-color .18s ease, background .18s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); border-color: transparent; }
+    .btn-secondary { color: #dbe7f8; background: rgba(17,26,46,.64); }
+    .btn-secondary:hover { border-color: rgba(126,225,255,.48); }
+
+    /* article */
+    .col-hero { padding: 64px 0 30px; }
+    .col-hero h1 span { background: linear-gradient(90deg, #f5fbff 0%, #aeefff 48%, #c7b8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .col-hero .lead { margin-top: 22px; }
+    .crumb { color: var(--faint); font-size: 12px; letter-spacing: .04em; margin-bottom: 18px; }
+    .crumb a { color: #8fa1bd; text-decoration: none; }
+    .crumb a:hover { color: #cfe; }
+
+    article { padding: 18px 0 40px; }
+    article > .measure > * + * { margin-top: 20px; }
+    article h2 { margin-top: 14px; }
+    .block { margin-top: 56px; }
+    .block > * + * { margin-top: 20px; }
+    article p { color: #c2d0e6; font-size: 16.5px; }
+    article ul { margin: 0; padding-left: 20px; color: #b6c5dc; }
+    article li + li { margin-top: 7px; }
+    .lede-list li { font-size: 16px; }
+    .rule { height: 1px; background: var(--line); border: 0; margin: 56px auto; width: min(var(--measure), 100%); }
+
+    .quote { border-left: 3px solid rgba(126,225,255,.5); padding: 4px 0 4px 18px; color: #b8c6dd; }
+    .quote p { color: #aab9d2; font-style: italic; }
+
+    .note { border: 1px solid var(--line); border-left: 3px solid var(--amber); border-radius: 12px; background: rgba(255,209,102,.05); padding: 16px 18px; }
+    .note strong { color: #ffe3a5; display: block; margin-bottom: 4px; font-size: 13px; letter-spacing: .04em; }
+    .note p { color: #d8c79e; font-size: 14px; }
+    .gov { border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 12px; background: rgba(99,230,190,.05); padding: 16px 18px; }
+    .gov p { color: #b9e8d6; font-size: 14.5px; }
+
+    /* issuer cards */
+    .issuers { display: grid; gap: 16px; }
+    .issuer { border: 1px solid var(--line); border-radius: var(--radius-sm); background: linear-gradient(180deg, rgba(17,26,46,.78), rgba(10,16,30,.86)); padding: 22px 24px; }
+    .issuer.primary { border-color: rgba(86,216,255,.34); box-shadow: 0 16px 45px rgba(25,184,234,.08); }
+    .issuer-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .issuer-head h3 { font-size: 20px; }
+    .tag { font-size: 10px; font-weight: 900; letter-spacing: .08em; padding: 4px 9px; border-radius: 999px; }
+    .tag.main { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); }
+    .tag.spec { color: #d8c0ff; background: rgba(167,139,250,.14); border: 1px solid rgba(167,139,250,.4); }
+    .issuer p { margin-top: 12px; }
+    .issuer ul { margin-top: 12px; columns: 2; column-gap: 26px; }
+    @media (max-width: 560px) { .issuer ul { columns: 1; } }
+
+    /* stakeholder flow */
+    .flow { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, rgba(16,26,48,.9), rgba(9,15,29,.92)); padding: 26px; display: grid; gap: 0; }
+    .flow-node { border: 1px solid var(--line); border-radius: 14px; background: #0b1324; padding: 16px 18px; }
+    .flow-node .lbl { color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .flow-node h4 { margin: 6px 0 0; font-size: 15px; }
+    .flow-node ul { margin: 10px 0 0; padding-left: 18px; color: #9fb0ca; font-size: 12.5px; }
+    .flow-node ul li + li { margin-top: 4px; }
+    .flow-arrow { justify-self: center; color: #50607a; font-size: 20px; line-height: 1; padding: 9px 0; }
+    .flow-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .flow-two { grid-template-columns: 1fr; } }
+
+    /* quadrant */
+    .quad-wrap { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: stretch; }
+    .axis-y { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad-main { display: grid; gap: 8px; }
+    .quad-top, .quad-bottom { text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cell { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: rgba(12,19,35,.74); }
+    .cell h4 { margin: 0; font-size: 15px; }
+    .cell p { margin-top: 6px; color: #93a3bd; font-size: 12.5px; }
+    .cell.go { border-color: rgba(99,230,190,.34); }
+    .cell.invest { border-color: rgba(167,139,250,.3); }
+    .cell.cash { border-color: rgba(86,216,255,.28); }
+    .cell.nogo { border-color: rgba(255,143,154,.26); }
+    .quad-x { display: grid; grid-template-columns: 1fr 1fr; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+    .quad-x span:last-child { text-align: right; }
+
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 620px) { .twocol { grid-template-columns: 1fr; } }
+    .mini-panel { border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(14,22,40,.7); padding: 20px 22px; }
+    .mini-panel h4 { margin: 0 0 12px; font-size: 14px; color: #d7e5f8; }
+    .mini-panel ul { margin: 0; padding-left: 18px; color: #aab9cf; font-size: 13.5px; }
+
+    /* ladder */
+    .ladder { display: grid; gap: 0; }
+    .rung { display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: center; }
+    .rung .dot { width: 12px; height: 12px; border-radius: 999px; background: linear-gradient(135deg, #35caef, #a78bfa); margin: 0 auto; position: relative; }
+    .rung:not(:last-child) .dot::after { content: ""; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background: #2f3f5e; }
+    .rung .txt { padding: 7px 0; color: #c2d0e6; font-size: 15px; }
+    .rung.peak .txt { color: #d8f6ff; font-weight: 700; }
+
+    /* feature list */
+    .feature-list { display: grid; gap: 12px; }
+    .feature-item { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+    .check { width: 20px; height: 20px; border-radius: 7px; display: grid; place-items: center; background: rgba(99,230,190,.09); color: var(--green); border: 1px solid rgba(99,230,190,.24); font-size: 11px; font-weight: 900; }
+    .feature-item p { color: #c2d0e6; font-size: 14.5px; }
+
+    .thesis { border: 1px solid rgba(86,216,255,.26); border-radius: var(--radius); background: radial-gradient(circle at 90% 10%, rgba(167,139,250,.16), transparent 36%), #0e172a; padding: 26px 28px; }
+    .thesis p { color: #d8f6ff; font-weight: 800; font-size: 17px; line-height: 1.9; }
+
+    .cta-panel { border-radius: 24px; border: 1px solid rgba(86,216,255,.26); background: radial-gradient(circle at 85% 15%, rgba(167,139,250,.18), transparent 32%), radial-gradient(circle at 8% 85%, rgba(86,216,255,.15), transparent 32%), #0e172a; padding: 36px; box-shadow: var(--shadow); }
+    .cta-panel h2 { font-size: 26px; }
+    .cta-panel p { color: #a9b8cd; margin-top: 14px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+    footer { border-top: 1px solid var(--line); padding: 34px 0 44px; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: flex-end; }
+    .footer-links a { color: #71809a; font-size: 11px; text-decoration: none; }
+    .footer-links a:hover { color: #b6c6dc; }
+
+    @media (max-width: 820px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-dropdown { display: none; }
+      .brand-sub { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+      .cta-panel { padding: 26px 22px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .container.measure { width: min(var(--measure), calc(100% - 24px)); }
+      .col-hero { padding: 44px 0 24px; }
+      .block { margin-top: 44px; }
+      .rule { margin: 44px auto; }
+      .cta-panel { padding: 22px 18px; }
+      .cta-actions .btn { width: 100%; }
+      .flow { padding: 20px; }
+      .issuer { padding: 20px; }
+    }
+    @media (max-width: 420px) {
+      .quad-wrap { grid-template-columns: 18px 1fr; gap: 8px; }
+      .quad { gap: 8px; }
+      .cell { padding: 14px; }
+      .mini-panel { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  
+
+    /* bidder-shortage column */
+    .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+    .stat { border:1px solid var(--line); border-radius:var(--radius-sm); background:rgba(14,22,40,.74); padding:20px; }
+    .stat .num { display:block; color:#d8f6ff; font-size:clamp(25px,4vw,36px); font-weight:900; line-height:1.15; letter-spacing:-.04em; }
+    .stat .unit { color:var(--cyan); font-size:12px; font-weight:850; letter-spacing:.04em; }
+    .stat p { margin-top:9px; color:#92a3bd; font-size:12.5px; line-height:1.65; }
+    .stat.caution .num { color:#ffe3a5; }
+    .cause-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .cause-card { border:1px solid var(--line); border-radius:var(--radius-sm); background:linear-gradient(180deg,rgba(17,26,46,.78),rgba(10,16,30,.86)); padding:22px; }
+    .cause-card h3 { display:flex; align-items:center; gap:9px; font-size:18px; }
+    .cause-card h3::before { content:""; width:8px; height:8px; flex:0 0 auto; border-radius:999px; background:var(--cyan); box-shadow:0 0 18px rgba(86,216,255,.45); }
+    .cause-card.buyer h3::before { background:var(--violet); box-shadow:0 0 18px rgba(167,139,250,.4); }
+    .cause-card ul { margin-top:13px; font-size:13.5px; }
+    .loop { border:1px solid var(--line); border-radius:var(--radius); background:radial-gradient(circle at 50% 50%,rgba(86,216,255,.08),transparent 42%),#0b1324; padding:24px; display:grid; gap:10px; }
+    .loop-row { display:grid; grid-template-columns:1fr 34px 1fr; gap:8px; align-items:center; }
+    .loop-box { min-height:88px; display:grid; place-items:center; text-align:center; border:1px solid var(--line); border-radius:14px; padding:14px; background:rgba(12,19,35,.88); color:#c7d6ea; font-size:13.5px; font-weight:730; }
+    .loop-arrow { color:#60718f; text-align:center; font-size:20px; }
+    .loop-down { text-align:center; color:#60718f; font-size:20px; line-height:1; }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .principle { border:1px solid var(--line); border-radius:14px; background:rgba(12,19,35,.78); padding:19px; }
+    .principle .n { color:var(--cyan); font-family:"SFMono-Regular",Consolas,monospace; font-size:11px; font-weight:900; letter-spacing:.08em; }
+    .principle h4 { margin:7px 0 8px; font-size:15px; }
+    .principle p { color:#96a7c0; font-size:12.5px; }
+    .balance { display:grid; grid-template-columns:1fr 52px 1fr; gap:10px; align-items:stretch; }
+    .balance-side { border:1px solid var(--line); border-radius:14px; padding:20px; background:rgba(14,22,40,.74); }
+    .balance-side h4 { margin:0 0 10px; font-size:15px; }
+    .balance-side ul { font-size:13px; }
+    .balance-mid { display:grid; place-items:center; color:var(--cyan); font-size:24px; font-weight:900; }
+    .source-list { display:grid; gap:12px; counter-reset:source; }
+    .source-item { counter-increment:source; border:1px solid var(--line); border-radius:12px; background:rgba(14,22,40,.58); padding:15px 17px; }
+    .source-item::before { content:"[" counter(source) "]"; color:var(--cyan); font:800 11px/1.4 "SFMono-Regular",Consolas,monospace; margin-right:8px; }
+    .source-item a { color:#bdefff; text-decoration:none; font-size:13px; font-weight:700; }
+    .source-item a:hover { text-decoration:underline; }
+    .source-item p { margin-top:5px; color:#7f90aa; font-size:11.5px; line-height:1.6; }
+    sup.ref a { color:var(--cyan); text-decoration:none; font-size:10px; font-weight:900; padding-left:2px; }
+    @media (max-width:720px) {
+      .stat-grid, .principles { grid-template-columns:1fr; }
+      .cause-grid { grid-template-columns:1fr; }
+      .balance { grid-template-columns:1fr; }
+      .balance-mid { min-height:32px; transform:rotate(90deg); }
+    }
+    @media (max-width:560px) {
+      .loop-row { grid-template-columns:1fr; }
+      .loop-arrow { transform:rotate(90deg); }
+      .loop-box { min-height:72px; }
+    }
+
+    /* column switcher dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; }
+    .nav-trigger { background: none; border: 0; padding: 0; margin: 0; cursor: pointer; color: #b7c4da; font-size: 14px; line-height: 1; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-trigger:hover, .nav-dropdown:hover .nav-trigger, .nav-dropdown:focus-within .nav-trigger { color: #fff; }
+    .nav-trigger .caret { width: 11px; height: 11px; transition: transform .2s ease; }
+    .nav-dropdown:hover .caret, .nav-dropdown:focus-within .caret { transform: rotate(180deg); }
+    .nav-menu { position: absolute; top: 100%; left: 50%; min-width: 320px; margin-top: 12px; padding: 7px; background: rgba(9,14,27,.98); border: 1px solid var(--line-strong); border-radius: 16px; box-shadow: 0 28px 70px rgba(0,0,0,.5); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(-50%) translateY(-8px); transition: opacity .18s ease, transform .18s ease; z-index: 70; }
+    .nav-menu::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+    .nav-dropdown:hover .nav-menu, .nav-dropdown:focus-within .nav-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-menu a { display: block; padding: 11px 13px; border-radius: 11px; text-decoration: none; }
+    .nav-menu a + a { margin-top: 2px; }
+    .nav-menu a:hover { background: rgba(86,216,255,.08); }
+    .nav-menu a[aria-current] { background: rgba(86,216,255,.10); }
+    .nav-menu .ci-no { display: block; color: var(--cyan); font-size: 10px; font-weight: 900; letter-spacing: .12em; font-family: "SFMono-Regular", Consolas, monospace; }
+    .nav-menu .ci-title { display: block; color: #e8effb; font-size: 13.5px; font-weight: 750; margin-top: 4px; line-height: 1.45; letter-spacing: 0; }
+    .nav-menu a[aria-current] .ci-title { color: #aeefff; }
+    .nav-menu .ci-desc { display: block; color: var(--faint); font-size: 11.5px; margin-top: 4px; line-height: 1.55; }
+    @media (max-width: 560px) { .nav-menu { min-width: min(320px, 78vw); } }
+</style>
+</head>
+<body>
+<header class="nav-wrap">
+<div class="container">
+<nav aria-label="主要ナビゲーション">
+<a aria-label="PSPA-Screen サービスページへ" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-linecap="round" stroke-width="1.7"></path>
+<circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"></circle>
+<path d="m19.7 13.7 1.8 1.8" stroke="#A78BFA" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</span>
+<span>PSPA-Screen <span class="brand-sub">PUBLIC-SECTOR PURSUIT INTELLIGENCE</span></span>
+</a>
+<div class="nav-links">
+<a href="index.html#capabilities">機能</a>
+<a href="index.html#delivery">提供形態</a>
+<a href="index.html#roadmap">ロードマップ</a>
+<div class="nav-dropdown">
+<button type="button" class="nav-trigger" aria-haspopup="true" aria-label="コラム一覧を開く">コラム<svg class="caret" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></button>
+<div class="nav-menu" role="menu">
+<a href="column.html" role="menuitem"><span class="ci-no">COLUMN 01</span><span class="ci-title">公共部門は、まだ開拓されていない取引市場です</span><span class="ci-desc">公共調達の仕組み・発注者の種類・参入障壁の実像と、案件の評価軸</span></a>
+<a aria-current="page" href="column2.html" role="menuitem"><span class="ci-no">COLUMN 02</span><span class="ci-title">公募案件における応札不足の構造と応札促進の社会的意義</span><span class="ci-desc">一者応札が生む損失と、競争可能性を高めることの公共的価値</span></a>
+</div>
+</div>
+<a class="nav-cta" href="index.html#contact">設計パートナー相談</a>
+</div>
+</nav>
+</div>
+</header>
+<main id="top">
+<section class="col-hero">
+<div class="container measure">
+<div class="crumb"><a href="index.html">PSPA-Screen</a> ／ コラム</div>
+<div class="eyebrow">Column — Why More Public Bidders Matter</div>
+<h1><span>公募案件における応札不足の構造と<br/>応札促進の社会的意義</span></h1>
+<p class="lead">一者応札は、直ちに不正や手続違反を意味するものではありません。しかし、競争可能性が低い状態が常態化すれば、価格発見、提案比較、品質改善、新規参入、供給の強靱性が損なわれます。問題を「企業が応募しないから」と片づけず、応札を阻む構造と、その解消が公共調達にもたらす価値を整理します。</p>
+</div>
+</section>
+<article>
+<div class="container measure">
+<p>公共調達は、公告を公開し、参加資格を満たす事業者に門戸を開けば、それだけで十分に競争的になるわけではありません。</p>
+<p>案件を発見し、資料を取得し、自社の資格・実績・人員を照合し、契約条件と採算を読み、提案書と証明資料を整える。応札者は、受注できるか分からない段階で相当の調査・判断・作成コストを負担します。専門性の高い調査研究、IT、運用保守、データ利用を伴う案件では、この負担はさらに大きくなります。</p>
+<p>したがって、応札不足は単なる「周知不足」ではありません。発注条件、情報設計、既存事業者への依存、応募準備コスト、契約リスク、社内意思決定の遅さが重なって生じる、<strong>市場設計上の問題</strong>です。</p>
+<div class="thesis">
+<p>見るべき指標は、公告が形式上公開されているかではなく、<br/>複数の適格事業者が「合理的に参加を検討できる状態」にあるかです。</p>
+</div>
+</div>
+<div class="container measure block">
+<div class="eyebrow">The issue</div>
+<h2>一者応札で失われるのは「安さ」だけではない</h2>
+<p>一者応札でも、手続が適法で、仕様を満たし、価格が予定価格内であれば契約は成立します。特定技術、知的財産、互換性、緊急性等により、供給者が事実上一者に限られる場合もあります。</p>
+<p>しかし、競争契約の形式を採りながら応札者が一者にとどまる状態が反復するなら、発注者は次の機能を十分に利用できません。</p>
+<div class="twocol">
+<div class="mini-panel">
+<h4>価格発見と条件規律</h4>
+<ul>
+<li>複数の市場価格を比較できない</li>
+<li>工数・単価・リスク配分の妥当性を検証しにくい</li>
+<li>既存事業者に条件改善を促す圧力が弱い</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>提案比較と学習</h4>
+<ul>
+<li>異なる技術方式・実施体制を比較できない</li>
+<li>仕様自体の過不足に気づきにくい</li>
+<li>市場から新しい解決方法を取り込めない</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>供給の強靱性</h4>
+<ul>
+<li>特定事業者への依存が固定化する</li>
+<li>撤退・障害・値上げ時の代替が乏しい</li>
+<li>運用知識やデータが閉じやすい</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>正統性と説明可能性</h4>
+<ul>
+<li>「なぜその価格・提案なのか」の説明材料が減る</li>
+<li>形式的競争と実質的競争の乖離が生じる</li>
+<li>市場参加者から見た公平性への信頼が弱まる</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container measure" style="margin-top:22px">
+<div class="stat-grid">
+<div class="stat caution">
+<span class="num">95.4<span class="unit">%</span></span>
+<p>会計検査院が分析した裁判所の情報システム関連競争契約では、一者応札の平均落札率。複数応札は69.0％でした。対象年度・分野が限定された事例であり、全公共調達への単純な一般化はできません。<sup class="ref"><a href="#src-1">[1]</a></sup></p>
+</div>
+<div class="stat">
+<span class="num">−15<span class="unit">%</span></span>
+<p>フィンランドの2017～2025年の公共調達データを用いた2026年の研究では、一者ではなく二者以上の応札がある案件は、調達費用が15％低いことと関連しました。<sup class="ref"><a href="#src-2">[2]</a></sup></p>
+</div>
+<div class="stat">
+<span class="num">−9<span class="unit">%</span></span>
+<p>同研究では、一者応札案件に一者だけ追加で参加した場合の推計削減幅は9％。因果効果の一般値ではなく、同国データに基づく推計として読む必要があります。<sup class="ref"><a href="#src-2">[2]</a></sup></p>
+</div>
+</div>
+<div class="note" style="margin-top:16px">
+<strong>数字の読み方</strong>
+<p>落札率や応札者数だけで個別契約の適否は判断できません。重要なのは、一者応札を異常値として機械的に排除することではなく、競争可能性が低下した理由を案件類型ごとに検証することです。</p>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Two-sided friction</div>
+<h2>応札不足は、発注側と事業者側の摩擦が重なって生じる</h2>
+<p>発注者は「公告したが応募が来なかった」と見ます。事業者は「案件は見えたが、応募を合理化できなかった」と判断します。この認識差を埋めない限り、周知先を増やすだけでは応札者は増えません。</p>
+<div class="cause-grid">
+<div class="cause-card">
+<h3>事業者側の摩擦</h3>
+<ul>
+<li><strong>発見コスト：</strong>機関ごとに公告ページ、検索方法、資料取得方法が異なる</li>
+<li><strong>判定コスト：</strong>資格、等級、地域、実績、人員、認証、再委託条件を短期間で照合する必要がある</li>
+<li><strong>提案コスト：</strong>受注確率が不明なまま、技術提案、見積り、工程、体制、証明資料を作成する</li>
+<li><strong>機会費用：</strong>提案要員を既存顧客や民間営業から外す必要がある</li>
+<li><strong>契約リスク：</strong>検収、知財、損害賠償、実費精算、支払時期、監査対応の負担を読みにくい</li>
+<li><strong>実行不確実性：</strong>データ、既存システム、関係者、現場条件へのアクセスが契約後まで確定しない</li>
+</ul>
+</div>
+<div class="cause-card buyer">
+<h3>発注設計側の摩擦</h3>
+<ul>
+<li><strong>過剰要件：</strong>目的達成に必須でない実績、資格、認証、専任体制を求める</li>
+<li><strong>準備期間不足：</strong>公告から締切までが短く、社内承認や協力会社調整が間に合わない</li>
+<li><strong>既存事業者優位：</strong>運用知識、設計書、データ、著作権、交換部品等へのアクセス差がある</li>
+<li><strong>仕様の固定化：</strong>特定製品・既存方式に事実上適合する提案しか成立しない</li>
+<li><strong>採算の不透明さ：</strong>予定工数、責任範囲、価格改定、追加作業の扱いが読みづらい</li>
+<li><strong>情報分散：</strong>公告、仕様、質問回答、訂正、様式が別ページやメール請求に分かれる</li>
+</ul>
+</div>
+</div>
+<p>会計検査院は、情報システムの改修・保守では、システムへの習熟費用、プログラム解析の困難さ、要求仕様を満たせないリスクが新規事業者の参加を妨げ得ると整理しています。設計書等の閲覧期間を長くすることや、広く参加できる仕様への見直しが改善策として挙げられています。<sup class="ref"><a href="#src-1">[1]</a></sup></p>
+</div>
+<div class="container measure" style="margin-top:22px">
+<div class="loop">
+<div class="loop-row">
+<div class="loop-box">参加可能な事業者が<br/>案件を発見・評価しにくい</div>
+<div class="loop-arrow">→</div>
+<div class="loop-box">応札者が少なくなり<br/>比較可能な提案が減る</div>
+</div>
+<div class="loop-down">↓</div>
+<div class="loop-row">
+<div class="loop-box">新規参入の実績が生まれず<br/>市場の裾野が広がらない</div>
+<div class="loop-arrow">←</div>
+<div class="loop-box">既存事業者の情報・実績・<br/>運用知識の優位が強まる</div>
+</div>
+</div>
+<p class="small" style="margin-top:12px;text-align:center">応札不足が続くと、その結果自体が次回調達の参入障壁を強める。</p>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Contestability</div>
+<h2>目標は「応札数」ではなく、競争可能性を高めること</h2>
+<p>応札者が多ければ常に良いわけではありません。要件を満たさない提案、履行能力のない低価格入札、形式的な相見積りを増やしても、調達の質は向上しません。</p>
+<p>応札促進で目指すべきなのは、<strong>適格で実行可能な複数事業者が、過度な負担なく参加を判断できる状態</strong>です。これは、次の三つに分解できます。</p>
+<div class="principles">
+<div class="principle">
+<span class="n">01 / DISCOVERABLE</span>
+<h4>見つけられる</h4>
+<p>対象市場の事業者に公告が届き、更新・質問回答・締切を追跡できる。情報が機関ごとに孤立しない。</p>
+</div>
+<div class="principle">
+<span class="n">02 / ASSESSABLE</span>
+<h4>判断できる</h4>
+<p>資格、実績、予算、評価基準、契約条件、利用可能なデータが明確で、Go／No-Goを早期に判定できる。</p>
+</div>
+<div class="principle">
+<span class="n">03 / EXECUTABLE</span>
+<h4>履行できる</h4>
+<p>準備・履行期間が現実的で、既存事業者だけが持つ情報への依存が抑えられ、責任と対価が均衡する。</p>
+</div>
+</div>
+<div class="quote">
+<p>形式上は誰でも参加できるが、実務上は一社しか提案を成立させられない。問題となるのは、この状態です。</p>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Public value</div>
+<h2>応札促進が持つ五つの社会的意義</h2>
+<div class="issuers">
+<div class="issuer primary">
+<div class="issuer-head"><h3>1. 財政支出の効率化</h3><span class="tag main">VALUE FOR MONEY</span></div>
+<p>複数の価格・工数・実施方法を比較できれば、予定価格に近い一案を受け入れるだけでなく、価格と品質の均衡を検証できます。競争は単純な値下げ圧力ではなく、費用内訳とリスク配分を市場に問い直す手段です。</p>
+</div>
+<div class="issuer">
+<div class="issuer-head"><h3>2. 品質・技術選択肢の拡大</h3><span class="tag spec">QUALITY</span></div>
+<p>調査、IT、コンサルティング、研究開発支援では、同じ目的に複数の実現方法があります。比較可能な提案が増えることで、発注者は価格だけでなく、方法論、体制、保守性、説明可能性、将来拡張性を選択できます。</p>
+</div>
+<div class="issuer">
+<div class="issuer-head"><h3>3. 中小企業・新規事業者の市場参入</h3><span class="tag spec">MARKET ACCESS</span></div>
+<p>公共調達は、新規顧客への入口であると同時に、その後の提案で使える実績を形成する市場です。最初の一件へのアクセスを改善すれば、市場の固定化を緩め、地域企業・専門企業・新設企業の成長機会を広げられます。2026年度の国の基本方針も、中小企業・小規模事業者向け契約目標61％、新規中小企業者向け3％以上を掲げています。<sup class="ref"><a href="#src-5">[5]</a></sup></p>
+</div>
+<div class="issuer">
+<div class="issuer-head"><h3>4. 供給網と行政サービスの強靱化</h3><span class="tag spec">RESILIENCE</span></div>
+<p>特定事業者への依存を減らし、代替可能な事業者と技術方式を育てることは、障害、撤退、価格上昇、災害、サイバーインシデント時の継続性に寄与します。競争政策と事業継続は別の課題ではありません。</p>
+</div>
+<div class="issuer">
+<div class="issuer-head"><h3>5. 調達への信頼と政策学習</h3><span class="tag spec">LEGITIMACY</span></div>
+<p>複数提案を比較した記録は、採択理由の説明可能性を高めます。また、応募が少なかった理由、質問、辞退要因を蓄積すれば、次回の仕様、期間、契約条件を改善する学習データになります。</p>
+</div>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Buyer actions</div>
+<h2>発注者が改善できること</h2>
+<p>応札促進は、広告費を増やすことだけではありません。参加判断と履行に必要な摩擦を、調達目的を損なわない範囲で減らすことです。</p>
+<div class="twocol">
+<div class="mini-panel">
+<h4>要件・仕様</h4>
+<ul>
+<li>参加資格と過去実績を必要最小限にする</li>
+<li>特定製品・既存方式への不要な依存を除く</li>
+<li>同等品・代替方式・共同提案の可否を明示する</li>
+<li>大規模案件を適切に分割し、中小企業が担える単位を作る</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>時間・情報</h4>
+<ul>
+<li>提案書の量に見合う公告・準備期間を確保する</li>
+<li>質問回答、訂正、様式を一か所で追跡可能にする</li>
+<li>既存設計書、データ定義、運用条件の閲覧機会を設ける</li>
+<li>予告、情報提供依頼、意見招請で市場対話を前倒しする</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>契約・採算</h4>
+<ul>
+<li>成果範囲、検収、追加作業、知財、賠償責任を明確にする</li>
+<li>物価・人件費変動に対する協議・価格改定の扱いを示す</li>
+<li>過度な無償提案や応募時成果物を求めない</li>
+<li>履行期間と支払条件を実行可能な水準にする</li>
+</ul>
+</div>
+<div class="mini-panel">
+<h4>検証・改善</h4>
+<ul>
+<li>一者応札案件を類型別にレビューする</li>
+<li>資料請求後の不参加・辞退理由を匿名で収集する</li>
+<li>応札者数だけでなく、有効提案数と市場参加者数を追う</li>
+<li>仕様変更後の応札数、価格、品質を継続比較する</li>
+</ul>
+</div>
+</div>
+<p>京都大学が公表する改善方策も、参加資格を必要最小限にすること、適切な履行期間、広い周知、提案書類の多い調達で十分な準備期間を確保することを挙げています。<sup class="ref"><a href="#src-3">[3]</a></sup> また、会計検査院の分析では、建設コンサルタント業務等で公告期間が長い区分ほど一者応札率が低い傾向が確認されています。<sup class="ref"><a href="#src-4">[4]</a></sup></p>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Supplier actions</div>
+<h2>事業者側にも「応札できる状態」の整備が必要</h2>
+<p>発注条件が改善されても、事業者側に資格・実績・判断プロセスが整っていなければ、締切までに応札へ移れません。公募営業では、案件を見つけてから毎回ゼロから確認する運用自体が参入障壁になります。</p>
+<div class="feature-list">
+<div class="feature-item"><span class="check">✓</span><p><strong>資格レディネス：</strong>等級、営業品目、地域資格、電子調達、認証、納税証明等を平時に整理する。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>実績の構造化：</strong>案件名、発注者、期間、担当範囲、成果、証明資料、開示可否を台帳化する。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>人員・協力先の可視化：</strong>必要専門性を誰が担えるか、再委託・共同提案が可能かを事前に確認する。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>Go／No-Go基準：</strong>親和性、フィジビリティ、収益性、戦略価値、提案工数、契約リスクを短時間で判定する。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>提案資産の再利用：</strong>体制図、品質管理、リスク管理、類似実績、見積前提を検証済み部品として蓄積する。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>辞退理由の記録：</strong>資格不足、実績不足、人員不足、採算、期間、契約条件を分け、次の改善につなげる。</p></div>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Shared responsibility</div>
+<h2>応札促進は、発注者だけの課題でも、営業支援だけの課題でもない</h2>
+<div class="balance">
+<div class="balance-side">
+<h4>発注者が担う市場設計</h4>
+<ul>
+<li>必要最小限で中立的な要件</li>
+<li>十分な準備・履行期間</li>
+<li>比較可能でアクセス可能な情報</li>
+<li>対価と責任が均衡した契約</li>
+</ul>
+</div>
+<div class="balance-mid">×</div>
+<div class="balance-side">
+<h4>事業者が担う参加能力</h4>
+<ul>
+<li>資格・実績・人員の平時整備</li>
+<li>迅速な適格性・採算判断</li>
+<li>証明可能な提案と履行体制</li>
+<li>実績と判断履歴の再利用</li>
+</ul>
+</div>
+</div>
+<p>一方だけを改善しても、競争可能性は十分に高まりません。発注者が参加しやすい市場を設計し、事業者が参加できる組織能力を持つ。その接点に、公告情報の標準化、調達インテリジェンス、資格・実績データ、事前市場対話が位置します。</p>
+<div class="gov">
+<p>EUの復興・強靱化計画の枠組みでは、ある加盟国が、EU基準額の上下を問わず一者応札手続の比率を15％未満まで引き下げ、その水準を維持することを明示的な改革目標に掲げています。これは「一者応札は違法」という意味ではなく、競争性・透明性・効率性を政策目標として測定する考え方を示しています。<sup class="ref"><a href="#src-6">[6]</a></sup></p>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">PSPA-Screen</div>
+<h2>PSPA-Screenが担うのは、応札前の取引コスト削減です</h2>
+<p>PSPA-Screenは、発注者の評価や落札結果を操作するものではありません。また、無差別な大量応募や自動送信を目的としません。</p>
+<p>対象とするのは、適格な企業が案件を見落とさず、応募可能性を早期に評価し、根拠のあるGo／No-Go判断を行い、提案に必要な事実と証拠を再利用できる状態を作ることです。</p>
+<div class="twocol">
+<div class="mini-panel">
+<h4>案件を見つける</h4>
+<p class="small" style="margin:0">分散した発注機関の公告を取得し、対象外案件を一次トリアージして、検討可能性のある案件に集中します。</p>
+</div>
+<div class="mini-panel">
+<h4>応募可能性を判断する</h4>
+<p class="small" style="margin:0">資格、実績、人員、予算、地域、契約条件を照合し、親和性とフィジビリティを分けて評価します。</p>
+</div>
+<div class="mini-panel">
+<h4>根拠を揃える</h4>
+<p class="small" style="margin:0">ファクト台帳と証明資料を対応させ、未確認事項、開示可否、追加ヒアリング事項を明示します。</p>
+</div>
+<div class="mini-panel">
+<h4>判断を次に残す</h4>
+<p class="small" style="margin:0">応札・辞退・不採択・採択の履歴と理由を蓄積し、次回の判断速度と提案品質を高めます。</p>
+</div>
+</div>
+<div class="thesis">
+<p>応札数を機械的に増やすのではなく、<br/>適格な事業者が、参加すべき案件に参加できる確率を高める。</p>
+</div>
+<div class="gov">
+<p>PSPA-Screenは、送信・自動応募の経路を構造的に持ちません。最終的な応札判断と提出操作は、利用企業が行います。</p>
+</div>
+</div>
+<div class="container measure block">
+<div class="eyebrow">Conclusion</div>
+<h2>競争性は、公告の瞬間ではなく、その前後の設計で決まる</h2>
+<p>一者応札は結果です。その背景には、要件、期間、仕様、契約、情報アクセス、既存システムへの依存、事業者の資格・実績管理、提案コストといった複数の要因があります。</p>
+<p>だからこそ、応札促進は「もっと企業に応募してもらう」という広報施策にとどまりません。発注者にとっては、比較可能な市場を設計すること。事業者にとっては、参加判断と提案を反復可能な業務プロセスにすることです。</p>
+<p>適格な応札者が増えれば、価格だけでなく、品質、技術選択肢、新規参入、供給の強靱性、説明可能性が改善します。公共調達の競争性を高めることは、単なる調達事務の効率化ではなく、<strong>公費から得られる社会的価値を高めるための市場基盤整備</strong>です。</p>
+</div>
+<div class="container measure block">
+<div class="eyebrow">Sources</div>
+<h2>参考資料</h2>
+<div class="source-list">
+<div class="source-item" id="src-1">
+<a href="https://report.jbaudit.go.jp/org/h24/YOUSEI1/2012-h24-Y1013-0.htm" rel="noopener" target="_blank">会計検査院「裁判所における会計経理等に関する会計検査の結果について」</a>
+<p>情報システム関連契約の応札者数別落札率、運用・保守で競争性を確保しにくい構造、仕様・設計書閲覧等の改善方策。</p>
+</div>
+<div class="source-item" id="src-2">
+<a href="https://www.kkv.fi/en/research-and-advocacy/working-papers/are-we-paying-too-much-the-cost-of-low-competition-in-public-procurement-working-papers-1-2026/" rel="noopener" target="_blank">Finnish Competition and Consumer Authority, “Are We Paying Too Much? The Cost of Low Competition in Public Procurement” (2026)</a>
+<p>フィンランドの2017～2025年の公共調達データを用いた、応札者数と調達費用の関連に関する推計。</p>
+</div>
+<div class="source-item" id="src-3">
+<a href="https://www.kyoto-u.ac.jp/ja/archive/prev/profile/procurance/goods/kaizen" rel="noopener" target="_blank">京都大学「一者応札・応募に係る改善方策について」</a>
+<p>必要最小限の参加資格、適切な履行期間、広い周知、十分な公告・準備期間。</p>
+</div>
+<div class="source-item" id="src-4">
+<a href="https://report.jbaudit.go.jp/org/r04/YOUSEI2/2022-r04-Y2010-0.htm" rel="noopener" target="_blank">会計検査院「放射性物質汚染対処特措法3事業等の入札、落札、契約金額等の状況に関する会計検査の結果について」</a>
+<p>公告期間区分と一者応札率の関係を含む、入札・契約状況の分析。</p>
+</div>
+<div class="source-item" id="src-5">
+<a href="https://www.meti.go.jp/press/2026/04/20260421001/20260421001.html" rel="noopener" target="_blank">経済産業省「令和8年度中小企業者に関する国等の契約の基本方針」</a>
+<p>中小企業・小規模事業者、新規中小企業者の受注機会増大、価格転嫁・取引適正化等に関する2026年度方針。</p>
+</div>
+<div class="source-item" id="src-6">
+<a href="https://reforms-investments.ec.europa.eu/projects/reducing-share-single-bid-public-procurement-procedures_en" rel="noopener" target="_blank">European Commission, “Reducing the share of single-bid public procurement procedures”（復興・強靱化ファシリティ下の加盟国改革）</a>
+<p>EUの復興・強靱化ファシリティ(RRF)に基づく加盟国の改革。一者応札手続の比率を15％未満に削減・維持し、競争性、透明性、効率性を高めることを目標とする。</p>
+</div>
+</div>
+<div class="note">
+<strong>調査上の留意点</strong>
+<p>各統計・事例は対象国、発注分野、年度、契約方式が異なります。本稿は、一者応札率や落札率について単一の普遍的基準を示すものではなく、応札不足を生む構造と改善方向を整理するものです。</p>
+</div>
+</div>
+<div class="container measure block">
+<div class="cta-panel">
+<div class="eyebrow">Design Partner</div>
+<h2>公共案件への参入可能性を、案件単位で可視化する</h2>
+<p>PSPA-Screenは、公共案件を初めて営業対象とする企業と、既存の公募営業を高度化したい企業を対象に、案件取得、資格レディネス、Go／No-Go評価、実績・証拠管理の運用設計を支援します。</p>
+<p>現在、招待制・個別契約によるclosed SaaSとしての提供を準備しています。</p>
+<div class="cta-actions">
+<a class="btn btn-primary" href="index.html#contact">設計パートナー相談</a>
+<a class="btn btn-secondary" href="index.html">サービス内容を見る</a>
+</div>
+</div>
+</div>
+</article>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<a class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"><svg fill="none" viewbox="0 0 24 24"><path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-linecap="round" stroke-width="1.7"></path><circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"></circle></svg></span><span>PSPA-Screen</span></a>
+<p class="small" style="margin-top:10px">Pre-α / 招待制closed SaaSとして提供準備中</p>
+</div>
+<div class="footer-links">
+<a href="index.html#capabilities">機能</a><a href="index.html#delivery">提供形態</a><a href="index.html#roadmap">ロードマップ</a><a href="index.html#pricing">料金案</a><a href="column.html">コラム：公共調達入門</a><a href="column2.html">コラム：応札促進の意義</a><a href="index.html#contact">導入相談</a><a href="mailto:yolcoyama@gmail.com">お問い合わせ</a>
+</div>
+</div>
+<p class="small" style="margin-top:18px">本コラムは公共調達における応札不足の一般的な構造を整理したものです。個別契約の適法性、競争性、価格妥当性は、案件の目的、供給市場、仕様、契約方式等を踏まえて個別に判断する必要があります。© 2026 icefog.</p>
+</div>
+</footer>
+</body>
+</html>

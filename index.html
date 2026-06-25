@@ -338,6 +338,7 @@
       .security-strip, .roadmap { grid-template-columns: 1fr 1fr; }
       .trust-grid { grid-template-columns: 1fr; gap: 12px; }
       .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-dropdown { display: none; }
       .matrix { overflow-x: auto; grid-template-columns: 160px repeat(3, 180px); }
       .matrix > div { min-width: 0; }
     }
@@ -369,6 +370,25 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; animation: none !important; }
     }
+
+    /* column switcher dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; }
+    .nav-trigger { background: none; border: 0; padding: 0; margin: 0; cursor: pointer; color: #b7c4da; font-size: 14px; line-height: 1; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-trigger:hover, .nav-dropdown:hover .nav-trigger, .nav-dropdown:focus-within .nav-trigger { color: #fff; }
+    .nav-trigger .caret { width: 11px; height: 11px; transition: transform .2s ease; }
+    .nav-dropdown:hover .caret, .nav-dropdown:focus-within .caret { transform: rotate(180deg); }
+    .nav-menu { position: absolute; top: 100%; left: 50%; min-width: 320px; margin-top: 12px; padding: 7px; background: rgba(9,14,27,.98); border: 1px solid var(--line-strong); border-radius: 16px; box-shadow: 0 28px 70px rgba(0,0,0,.5); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(-50%) translateY(-8px); transition: opacity .18s ease, transform .18s ease; z-index: 70; }
+    .nav-menu::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+    .nav-dropdown:hover .nav-menu, .nav-dropdown:focus-within .nav-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-menu a { display: block; padding: 11px 13px; border-radius: 11px; text-decoration: none; }
+    .nav-menu a + a { margin-top: 2px; }
+    .nav-menu a:hover { background: rgba(86,216,255,.08); }
+    .nav-menu a[aria-current] { background: rgba(86,216,255,.10); }
+    .nav-menu .ci-no { display: block; color: var(--cyan); font-size: 10px; font-weight: 900; letter-spacing: .12em; font-family: "SFMono-Regular", Consolas, monospace; }
+    .nav-menu .ci-title { display: block; color: #e8effb; font-size: 13.5px; font-weight: 750; margin-top: 4px; line-height: 1.45; letter-spacing: 0; }
+    .nav-menu a[aria-current] .ci-title { color: #aeefff; }
+    .nav-menu .ci-desc { display: block; color: var(--faint); font-size: 11.5px; margin-top: 4px; line-height: 1.55; }
+    @media (max-width: 560px) { .nav-menu { min-width: min(320px, 78vw); } }
   </style>
 </head>
 <body>
@@ -389,7 +409,13 @@
           <a href="#capabilities">機能</a>
           <a href="#delivery">提供形態</a>
           <a href="#roadmap">ロードマップ</a>
-          <a href="column.html">コラム</a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-trigger" aria-haspopup="true" aria-label="コラム一覧を開く">コラム<svg class="caret" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="nav-menu" role="menu">
+              <a role="menuitem" href="column.html"><span class="ci-no">COLUMN 01</span><span class="ci-title">公共部門は、まだ開拓されていない取引市場です</span><span class="ci-desc">公共調達の仕組み・発注者の種類・参入障壁の実像と、案件の評価軸</span></a>
+              <a role="menuitem" href="column2.html"><span class="ci-no">COLUMN 02</span><span class="ci-title">公募案件における応札不足の構造と応札促進の社会的意義</span><span class="ci-desc">一者応札が生む損失と、競争可能性を高めることの公共的価値</span></a>
+            </div>
+          </div>
           <a class="nav-cta" href="#contact">設計パートナー相談</a>
         </div>
       </nav>
@@ -689,7 +715,7 @@
           <p class="small" style="margin-top:10px">Pre-α / 招待制closed SaaSとして提供準備中</p>
         </div>
         <div class="footer-links">
-          <a href="#capabilities">機能</a><a href="#delivery">提供形態</a><a href="#roadmap">ロードマップ</a><a href="#pricing">料金案</a><a href="column.html">コラム</a><a href="#contact">導入相談</a><a href="mailto:yolcoyama@gmail.com">お問い合わせ</a>
+          <a href="#capabilities">機能</a><a href="#delivery">提供形態</a><a href="#roadmap">ロードマップ</a><a href="#pricing">料金案</a><a href="column.html">コラム：公共調達入門</a><a href="column2.html">コラム：応札促進の意義</a><a href="#contact">導入相談</a><a href="mailto:yolcoyama@gmail.com">お問い合わせ</a>
         </div>
       </div>
       <div class="source-note">
