@@ -1,0 +1,476 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WM82ZX0BN1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WM82ZX0BN1');
+  </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Claude Code / Codexを含むAgentic AIが公募案件インテリジェンスの多くを代替できる時代に、それでもPSPA-Screenが価値を持つ理由を、現実装に即して整理します。" name="description"/>
+<meta content="#0b1020" name="theme-color"/>
+<title>Agentic AI時代に、なぜPSPA-Screenが公募案件インテリジェンスとして価値を持つのか｜PSPA-Screen コラム</title>
+<style>
+    :root {
+      --bg: #070b14;
+      --bg-2: #0b1020;
+      --panel: rgba(18, 27, 49, 0.82);
+      --panel-solid: #111a2e;
+      --panel-soft: #0d1527;
+      --line: rgba(167, 190, 255, 0.16);
+      --line-strong: rgba(167, 190, 255, 0.28);
+      --text: #edf3ff;
+      --muted: #9fb0ca;
+      --faint: #72819b;
+      --cyan: #56d8ff;
+      --cyan-2: #19b8ea;
+      --violet: #a78bfa;
+      --green: #63e6be;
+      --amber: #ffd166;
+      --red: #ff8f9a;
+      --shadow: 0 24px 80px rgba(0,0,0,.34);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+      --measure: 760px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 13% 6%, rgba(86,216,255,.13), transparent 26%),
+        radial-gradient(circle at 88% 4%, rgba(167,139,250,.11), transparent 28%),
+        linear-gradient(180deg, #070b14 0%, #09101e 46%, #070b14 100%);
+      font-family: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, -apple-system, sans-serif;
+      line-height: 1.85;
+      letter-spacing: .01em;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    img, svg { max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .measure { width: min(var(--measure), 100%); margin-inline: auto; }
+    /* container と measure を併用した本文要素は、measure 幅で頭打ちしつつ左右ガターを維持する */
+    .container.measure { width: min(var(--measure), calc(100% - 40px)); }
+    /* グリッド子要素の min-width:auto による横はみ出しを防ぐ */
+    .twocol > *, .flow-two > *, .quad > .cell, .quad-main,
+    .feature-item, .rung, .issuers > *, .issuer ul { min-width: 0; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: #bceeff; font-size: 13px; font-weight: 760;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--cyan); }
+    h1, h2, h3 { line-height: 1.3; letter-spacing: -.02em; }
+    h1 { font-size: clamp(32px, 5vw, 54px); margin: 0; }
+    h2 { font-size: clamp(25px, 3.3vw, 36px); margin: 0; }
+    h3 { font-size: 19px; margin: 0; }
+    p { margin: 0; }
+    .lead { font-size: clamp(17px, 2.05vw, 21px); color: #c5d2e8; }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; color: var(--faint); }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+
+    /* nav (shared with LP) */
+    .nav-wrap { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px); background: rgba(7,11,20,.72); border-bottom: 1px solid rgba(167,190,255,.10); }
+    nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; text-decoration: none; }
+    .brand-mark { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(140deg, rgba(86,216,255,.26), rgba(167,139,250,.20)); border: 1px solid rgba(126,225,255,.38); box-shadow: 0 8px 24px rgba(25,184,234,.16); }
+    .brand-mark svg { width: 20px; }
+    .brand-sub { color: var(--faint); font-weight: 600; font-size: 11px; letter-spacing: .08em; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #b7c4da; text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { flex: 0 0 auto; padding: 10px 16px; color: #061019 !important; background: #d8f6ff; border-radius: 999px; font-weight: 800; white-space: nowrap; }
+
+    .btn { border: 1px solid var(--line-strong); border-radius: 12px; padding: 13px 19px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 9px; transition: transform .18s ease, border-color .18s ease, background .18s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); border-color: transparent; }
+    .btn-secondary { color: #dbe7f8; background: rgba(17,26,46,.64); }
+    .btn-secondary:hover { border-color: rgba(126,225,255,.48); }
+
+    /* article */
+    .col-hero { padding: 64px 0 30px; }
+    .col-hero h1 span { background: linear-gradient(90deg, #f5fbff 0%, #aeefff 48%, #c7b8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .col-hero .lead { margin-top: 22px; }
+    .crumb { color: var(--faint); font-size: 12px; letter-spacing: .04em; margin-bottom: 18px; }
+    .crumb a { color: #8fa1bd; text-decoration: none; }
+    .crumb a:hover { color: #cfe; }
+
+    article { padding: 18px 0 40px; }
+    article > .measure > * + * { margin-top: 20px; }
+    article h2 { margin-top: 14px; }
+    .block { margin-top: 56px; }
+    .block > * + * { margin-top: 20px; }
+    article p { color: #c2d0e6; font-size: 16.5px; }
+    article ul { margin: 0; padding-left: 20px; color: #b6c5dc; }
+    article li + li { margin-top: 7px; }
+    .lede-list li { font-size: 16px; }
+    .rule { height: 1px; background: var(--line); border: 0; margin: 56px auto; width: min(var(--measure), 100%); }
+
+    .quote { border-left: 3px solid rgba(126,225,255,.5); padding: 4px 0 4px 18px; color: #b8c6dd; }
+    .quote p { color: #aab9d2; font-style: italic; }
+
+    .note { border: 1px solid var(--line); border-left: 3px solid var(--amber); border-radius: 12px; background: rgba(255,209,102,.05); padding: 16px 18px; }
+    .note strong { color: #ffe3a5; display: block; margin-bottom: 4px; font-size: 13px; letter-spacing: .04em; }
+    .note p { color: #d8c79e; font-size: 14px; }
+    .gov { border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 12px; background: rgba(99,230,190,.05); padding: 16px 18px; }
+    .gov p { color: #b9e8d6; font-size: 14.5px; }
+
+    /* issuer cards */
+    .issuers { display: grid; gap: 16px; }
+    .issuer { border: 1px solid var(--line); border-radius: var(--radius-sm); background: linear-gradient(180deg, rgba(17,26,46,.78), rgba(10,16,30,.86)); padding: 22px 24px; }
+    .issuer.primary { border-color: rgba(86,216,255,.34); box-shadow: 0 16px 45px rgba(25,184,234,.08); }
+    .issuer-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .issuer-head h3 { font-size: 20px; }
+    .tag { font-size: 10px; font-weight: 900; letter-spacing: .08em; padding: 4px 9px; border-radius: 999px; }
+    .tag.main { color: #061019; background: linear-gradient(135deg, #baf2ff, #7ee4ff); }
+    .tag.spec { color: #d8c0ff; background: rgba(167,139,250,.14); border: 1px solid rgba(167,139,250,.4); }
+    .issuer p { margin-top: 12px; }
+    .issuer ul { margin-top: 12px; columns: 2; column-gap: 26px; }
+    @media (max-width: 560px) { .issuer ul { columns: 1; } }
+
+    /* stakeholder flow */
+    .flow { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, rgba(16,26,48,.9), rgba(9,15,29,.92)); padding: 26px; display: grid; gap: 0; }
+    .flow-node { border: 1px solid var(--line); border-radius: 14px; background: #0b1324; padding: 16px 18px; }
+    .flow-node .lbl { color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .flow-node h4 { margin: 6px 0 0; font-size: 15px; }
+    .flow-node ul { margin: 10px 0 0; padding-left: 18px; color: #9fb0ca; font-size: 12.5px; }
+    .flow-node ul li + li { margin-top: 4px; }
+    .flow-arrow { justify-self: center; color: #50607a; font-size: 20px; line-height: 1; padding: 9px 0; }
+    .flow-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .flow-two { grid-template-columns: 1fr; } }
+
+    /* quadrant */
+    .quad-wrap { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: stretch; }
+    .axis-y { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad-main { display: grid; gap: 8px; }
+    .quad-top, .quad-bottom { text-align: center; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cell { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: rgba(12,19,35,.74); }
+    .cell h4 { margin: 0; font-size: 15px; }
+    .cell p { margin-top: 6px; color: #93a3bd; font-size: 12.5px; }
+    .cell.go { border-color: rgba(99,230,190,.34); }
+    .cell.invest { border-color: rgba(167,139,250,.3); }
+    .cell.cash { border-color: rgba(86,216,255,.28); }
+    .cell.nogo { border-color: rgba(255,143,154,.26); }
+    .quad-x { display: grid; grid-template-columns: 1fr 1fr; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+    .quad-x span:last-child { text-align: right; }
+
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 620px) { .twocol { grid-template-columns: 1fr; } }
+    .mini-panel { border: 1px solid var(--line); border-radius: var(--radius-sm); background: rgba(14,22,40,.7); padding: 20px 22px; }
+    .mini-panel h4 { margin: 0 0 12px; font-size: 14px; color: #d7e5f8; }
+    .mini-panel ul { margin: 0; padding-left: 18px; color: #aab9cf; font-size: 13.5px; }
+
+    /* ladder */
+    .ladder { display: grid; gap: 0; }
+    .rung { display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: center; }
+    .rung .dot { width: 12px; height: 12px; border-radius: 999px; background: linear-gradient(135deg, #35caef, #a78bfa); margin: 0 auto; position: relative; }
+    .rung:not(:last-child) .dot::after { content: ""; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background: #2f3f5e; }
+    .rung .txt { padding: 7px 0; color: #c2d0e6; font-size: 15px; }
+    .rung.peak .txt { color: #d8f6ff; font-weight: 700; }
+
+    /* feature list */
+    .feature-list { display: grid; gap: 12px; }
+    .feature-item { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+    .check { width: 20px; height: 20px; border-radius: 7px; display: grid; place-items: center; background: rgba(99,230,190,.09); color: var(--green); border: 1px solid rgba(99,230,190,.24); font-size: 11px; font-weight: 900; }
+    .feature-item p { color: #c2d0e6; font-size: 14.5px; }
+
+    .thesis { border: 1px solid rgba(86,216,255,.26); border-radius: var(--radius); background: radial-gradient(circle at 90% 10%, rgba(167,139,250,.16), transparent 36%), #0e172a; padding: 26px 28px; }
+    .thesis p { color: #d8f6ff; font-weight: 800; font-size: 17px; line-height: 1.9; }
+
+    .cta-panel { border-radius: 24px; border: 1px solid rgba(86,216,255,.26); background: radial-gradient(circle at 85% 15%, rgba(167,139,250,.18), transparent 32%), radial-gradient(circle at 8% 85%, rgba(86,216,255,.15), transparent 32%), #0e172a; padding: 36px; box-shadow: var(--shadow); }
+    .cta-panel h2 { font-size: 26px; }
+    .cta-panel p { color: #a9b8cd; margin-top: 14px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+    footer { border-top: 1px solid var(--line); padding: 34px 0 44px; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: flex-end; }
+    .footer-links a { color: #71809a; font-size: 11px; text-decoration: none; }
+    .footer-links a:hover { color: #b6c6dc; }
+
+    @media (max-width: 820px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-dropdown { display: none; }
+      .brand-sub { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+      .cta-panel { padding: 26px 22px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .container.measure { width: min(var(--measure), calc(100% - 24px)); }
+      .col-hero { padding: 44px 0 24px; }
+      .block { margin-top: 44px; }
+      .rule { margin: 44px auto; }
+      .cta-panel { padding: 22px 18px; }
+      .cta-actions .btn { width: 100%; }
+      .flow { padding: 20px; }
+      .issuer { padding: 20px; }
+    }
+    @media (max-width: 420px) {
+      .quad-wrap { grid-template-columns: 18px 1fr; gap: 8px; }
+      .quad { gap: 8px; }
+      .cell { padding: 14px; }
+      .mini-panel { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+
+    /* bidder-shortage column */
+    .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+    .stat { border:1px solid var(--line); border-radius:var(--radius-sm); background:rgba(14,22,40,.74); padding:20px; }
+    .stat .num { display:block; color:#d8f6ff; font-size:clamp(25px,4vw,36px); font-weight:900; line-height:1.15; letter-spacing:-.04em; }
+    .stat .unit { color:var(--cyan); font-size:12px; font-weight:850; letter-spacing:.04em; }
+    .stat p { margin-top:9px; color:#92a3bd; font-size:12.5px; line-height:1.65; }
+    .stat.caution .num { color:#ffe3a5; }
+    .cause-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .cause-card { border:1px solid var(--line); border-radius:var(--radius-sm); background:linear-gradient(180deg,rgba(17,26,46,.78),rgba(10,16,30,.86)); padding:22px; }
+    .cause-card h3 { display:flex; align-items:center; gap:9px; font-size:18px; }
+    .cause-card h3::before { content:""; width:8px; height:8px; flex:0 0 auto; border-radius:999px; background:var(--cyan); box-shadow:0 0 18px rgba(86,216,255,.45); }
+    .cause-card.buyer h3::before { background:var(--violet); box-shadow:0 0 18px rgba(167,139,250,.4); }
+    .cause-card ul { margin-top:13px; font-size:13.5px; }
+    .loop { border:1px solid var(--line); border-radius:var(--radius); background:radial-gradient(circle at 50% 50%,rgba(86,216,255,.08),transparent 42%),#0b1324; padding:24px; display:grid; gap:10px; }
+    .loop-row { display:grid; grid-template-columns:1fr 34px 1fr; gap:8px; align-items:center; }
+    .loop-box { min-height:88px; display:grid; place-items:center; text-align:center; border:1px solid var(--line); border-radius:14px; padding:14px; background:rgba(12,19,35,.88); color:#c7d6ea; font-size:13.5px; font-weight:730; }
+    .loop-arrow { color:#60718f; text-align:center; font-size:20px; }
+    .loop-down { text-align:center; color:#60718f; font-size:20px; line-height:1; }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .principle { border:1px solid var(--line); border-radius:14px; background:rgba(12,19,35,.78); padding:19px; }
+    .principle .n { color:var(--cyan); font-family:"SFMono-Regular",Consolas,monospace; font-size:11px; font-weight:900; letter-spacing:.08em; }
+    .principle h4 { margin:7px 0 8px; font-size:15px; }
+    .principle p { color:#96a7c0; font-size:12.5px; }
+    .balance { display:grid; grid-template-columns:1fr 52px 1fr; gap:10px; align-items:stretch; }
+    .balance-side { border:1px solid var(--line); border-radius:14px; padding:20px; background:rgba(14,22,40,.74); }
+    .balance-side h4 { margin:0 0 10px; font-size:15px; }
+    .balance-side ul { font-size:13px; }
+    .balance-mid { display:grid; place-items:center; color:var(--cyan); font-size:24px; font-weight:900; }
+    .source-list { display:grid; gap:12px; counter-reset:source; }
+    .source-item { counter-increment:source; border:1px solid var(--line); border-radius:12px; background:rgba(14,22,40,.58); padding:15px 17px; }
+    .source-item::before { content:"[" counter(source) "]"; color:var(--cyan); font:800 11px/1.4 "SFMono-Regular",Consolas,monospace; margin-right:8px; }
+    .source-item a { color:#bdefff; text-decoration:none; font-size:13px; font-weight:700; }
+    .source-item a:hover { text-decoration:underline; }
+    .source-item p { margin-top:5px; color:#7f90aa; font-size:11.5px; line-height:1.6; }
+    sup.ref a { color:var(--cyan); text-decoration:none; font-size:10px; font-weight:900; padding-left:2px; }
+    .matrix { display:grid; grid-template-columns:1.05fr repeat(3,1fr); gap:1px; overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--line); }
+    .matrix > div { background:#0b1324; padding:12px 13px; min-width:150px; color:#aebdd3; font-size:12.5px; }
+    .matrix .head { background:#111a2e; color:#d7e5f8; font-weight:850; }
+    .matrix .rowhead { color:#c6d5ea; font-weight:780; }
+    .yes { color:#aaf2dc !important; }
+    .partial { color:#ffe09a !important; }
+    .no { color:#72809a !important; }
+    @media (max-width:720px) {
+      .stat-grid, .principles { grid-template-columns:1fr; }
+      .cause-grid { grid-template-columns:1fr; }
+      .balance { grid-template-columns:1fr; }
+      .balance-mid { min-height:32px; transform:rotate(90deg); }
+    }
+    @media (max-width:560px) {
+      .loop-row { grid-template-columns:1fr; }
+      .loop-arrow { transform:rotate(90deg); }
+      .loop-box { min-height:72px; }
+    }
+
+    /* column switcher dropdown */
+    .nav-dropdown { position: relative; display: inline-flex; }
+    .nav-trigger { background: none; border: 0; padding: 0; margin: 0; cursor: pointer; color: #b7c4da; font-size: 14px; line-height: 1; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-trigger:hover, .nav-dropdown:hover .nav-trigger, .nav-dropdown:focus-within .nav-trigger { color: #fff; }
+    .nav-trigger .caret { width: 11px; height: 11px; transition: transform .2s ease; }
+    .nav-dropdown:hover .caret, .nav-dropdown:focus-within .caret { transform: rotate(180deg); }
+    .nav-menu { position: absolute; top: 100%; left: 50%; min-width: 320px; margin-top: 12px; padding: 7px; background: rgba(9,14,27,.98); border: 1px solid var(--line-strong); border-radius: 16px; box-shadow: 0 28px 70px rgba(0,0,0,.5); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(-50%) translateY(-8px); transition: opacity .18s ease, transform .18s ease; z-index: 70; }
+    .nav-menu::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+    .nav-dropdown:hover .nav-menu, .nav-dropdown:focus-within .nav-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-menu a { display: block; padding: 11px 13px; border-radius: 11px; text-decoration: none; }
+    .nav-menu a + a { margin-top: 2px; }
+    .nav-menu a:hover { background: rgba(86,216,255,.08); }
+    .nav-menu a[aria-current] { background: rgba(86,216,255,.10); }
+    .nav-menu .ci-no { display: block; color: var(--cyan); font-size: 10px; font-weight: 900; letter-spacing: .12em; font-family: "SFMono-Regular", Consolas, monospace; }
+    .nav-menu .ci-title { display: block; color: #e8effb; font-size: 13.5px; font-weight: 750; margin-top: 4px; line-height: 1.45; letter-spacing: 0; }
+    .nav-menu a[aria-current] .ci-title { color: #aeefff; }
+    .nav-menu .ci-desc { display: block; color: var(--faint); font-size: 11.5px; margin-top: 4px; line-height: 1.55; }
+    @media (max-width: 560px) { .nav-menu { min-width: min(320px, 78vw); } }
+</style>
+</head>
+<body>
+<header class="nav-wrap">
+<div class="container">
+<nav aria-label="主要ナビゲーション">
+<a aria-label="PSPA-Screen サービスページへ" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-linecap="round" stroke-width="1.7"></path>
+<circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"></circle>
+<path d="m19.7 13.7 1.8 1.8" stroke="#A78BFA" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</span>
+<span>PSPA-Screen <span class="brand-sub">PUBLIC-SECTOR PURSUIT INTELLIGENCE</span></span>
+</a>
+<div class="nav-links">
+<a href="index.html#capabilities">機能</a>
+<a href="index.html#delivery">提供形態</a>
+<a href="index.html#roadmap">ロードマップ</a>
+<div class="nav-dropdown">
+<button type="button" class="nav-trigger" aria-haspopup="true" aria-label="コラム一覧を開く">コラム<svg class="caret" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></button>
+<div class="nav-menu" role="menu">
+<a href="column.html" role="menuitem"><span class="ci-no">COLUMN 01</span><span class="ci-title">公共部門は、まだ開拓されていない取引市場です</span><span class="ci-desc">公共調達の仕組み・発注者の種類・参入障壁の実像と、案件の評価軸</span></a>
+<a href="column2.html" role="menuitem"><span class="ci-no">COLUMN 02</span><span class="ci-title">公募案件における応札不足の構造と応札促進の社会的意義</span><span class="ci-desc">一者応札が生む損失と、競争可能性を高めることの公共的価値</span></a>
+<a aria-current="page" href="column3.html" role="menuitem"><span class="ci-no">COLUMN 03</span><span class="ci-title">Agentic AI時代にPSPA-Screenが残す価値</span><span class="ci-desc">汎用AIで代替可能な表層機能と、製品が担う運用層の差</span></a>
+</div>
+</div>
+<a class="nav-cta" href="index.html#contact">設計パートナー相談</a>
+</div>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<section class="col-hero">
+<div class="container measure">
+<div class="crumb"><a href="index.html">PSPA-Screen</a> ／ コラム</div>
+<div class="eyebrow">Column — Agentic AI and Product Value</div>
+<h1><span>Agentic AI時代にPSPA-Screenが<br/>なお価値を持つ理由</span></h1>
+<p class="lead">Claude CodeやCodexを含むAgentic AIは、正直に言えば、公募案件の検索、要約、分類、比較、提案下書き、ワークフロー自動化のかなりの部分を実行できます。したがってPSPA-Screenの価値は、「AIにはできない」と主張することではありません。価値は、AIで可能な作業を、公共案件営業の反復可能で監査可能な業務プロセスへ圧縮することにあります。</p>
+</div>
+</section>
+<article>
+<div class="container measure">
+<p>公募案件インテリジェンスを、単発の調査・要約・提案書作成として見るなら、汎用Agentic AIで相当程度代替できます。公告ページを巡回し、PDFを読み、参加条件を抜き出し、Go／No-Goの仮説を出し、提案骨子を書くことは、もはや特殊な能力ではありません。</p>
+<p>しかし、実務上の制約は別の場所にあります。案件判断には、自社の資格、地域、実績、体制、過去応募、証拠資料、開示可否、落札市場、締切、社内承認が絡みます。ここで必要なのは、うまい一回の回答ではなく、同じ前提で何度も判断でき、あとから根拠を追える仕組みです。</p>
+<div class="thesis">
+<p>PSPA-Screenの価値は、Agentic AIの代替不能性ではない。<br/>AIでできる作業を、公共案件営業の運用単位へ落とし込むことです。</p>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Concession</div>
+<h2>まず、Agentic AIでも「できる」ことを認める</h2>
+<p>この点を曖昧にすると、訴求は弱くなります。Claude CodeやCodexに十分な指示、対象URL、企業情報、評価基準、過去実績、提出ルールを与えれば、PSPA-Screenに似た作業列を組むことは可能です。</p>
+<div class="twocol">
+<div class="mini-panel"><h4>汎用Agentが実行できること</h4><ul><li>複数サイトの巡回と一覧化</li><li>公告・仕様書・様式の要約</li><li>参加資格、締切、提出物の抽出</li><li>案件ごとの適合性スコア案</li><li>提案書・質問票・社内メモの下書き</li></ul></div>
+<div class="mini-panel"><h4>それでも残ること</h4><ul><li>企業固有ファクトの正本管理</li><li>未検証情報と提出可能情報の分離</li><li>同じ評価軸による反復判断</li><li>過去応募・落札市場との突合</li><li>人間が承認できる証跡の保存</li></ul></div>
+</div>
+<p>したがって、PSPA-Screenは「AIより賢い」と主張すべきではありません。むしろ、汎用AIをそのまま業務に入れた時に利用者側へ残る設定、検証、台帳化、再現性、レビュー負荷を引き受ける製品だと位置づける方が正確です。</p>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Current implementation</div>
+<h2>現行実装が持つ差別点</h2>
+<p>PSPA-Screenの現行実装は、単なる「公告を読ませるプロンプト集」ではありません。製品コード、主体ごとの一次情報、派生設定、実行状態、提出前確認を分離する構造を持っています。</p>
+<div class="issuers">
+<div class="issuer primary"><div class="issuer-head"><h3>1. Product / Principal Pack / Compiler</h3><span class="tag main">CONTEXT</span></div><p>製品コードは主体固有の文字列を持たず、各社の identity、資格、対象機関、領域語、戦略条件は `principals/&lt;id&gt;/profile.yaml` に集約されます。`pspa-principal` がそこから keywords、triage、orgs、budget、scoring、eval_system を決定的に生成します。</p></div>
+<div class="issuer"><div class="issuer-head"><h3>2. 一次トリアージと4軸評価</h3><span class="tag spec">SCREENING</span></div><p>取得した `Listing` は、まずLLMを使わないキーワード・期日ベースのトリアージに通されます。候補だけを feasibility、strategic fit、short-term cashflow、long-term fit の4軸で評価し、重みはprincipalごとに変更できます。</p></div>
+<div class="issuer"><div class="issuer-head"><h3>3. ファクト台帳と提出前ゲート</h3><span class="tag spec">INTEGRITY</span></div><p>`fact_ledger.yaml` は、確認済み・要確認・矛盾ありの検証状態と、開示可否を別レイヤーで管理します。`PreSubmissionGate` は、ドラフト内の未検証ファクト、開示不可ファクト、個人名での参画約束を提出ブロッカーとして報告します。</p></div>
+<div class="issuer"><div class="issuer-head"><h3>4. 入札履歴・落札結果インテリジェンス</h3><span class="tag spec">MEMORY</span></div><p>`bidding_ledger.yaml` は自社の応募・辞退・不採択・採択履歴を、`award_ledger.yaml` は他社を含む落札結果を扱います。落札結果側は `AwardRecord` として価格、予定価格、落札率、方式、入札者数、公告期間等を構造化し、価格妥当性や競合・パートナー候補の判断材料にします。</p></div>
+<div class="issuer"><div class="issuer-head"><h3>5. ローカルWebコンソールと読取専用ダッシュボード</h3><span class="tag spec">OPERATIONS</span></div><p>Web UIは `127.0.0.1` 前提で、成果物閲覧、ジョブ起動、ケース確認を扱います。ダッシュボードはローカル成果物から再計算し、GET時にLLMやネットワークを呼びません。送信・自動応募のレバーは持ちません。</p></div>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Why productization matters</div>
+<h2>自作できることと、運用できることは違う</h2>
+<p>Agentic AIで同等ワークフローを自作する場合、利用者は少なくとも次を設計しなければなりません。</p>
+<div class="feature-list">
+<div class="feature-item"><span class="check">✓</span><p><strong>文脈境界：</strong>どの企業情報を正本とし、どのメモやドラフトを参考情報に落とすか。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>評価軸：</strong>資格適合、戦略親和性、短期収益、長期価値を毎回同じ意味で採点する方法。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>証拠管理：</strong>提案書に書いてよい実績、書いてはいけない実績、確認待ちの実績を分ける方法。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>差分処理：</strong>既読案件、再掲案件、資料受領後の再評価、落札結果の更新を扱う方法。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>セキュリティ：</strong>認証情報、業者コード、法人番号、証明書番号等を出力やログへ漏らさない方法。</p></div>
+<div class="feature-item"><span class="check">✓</span><p><strong>監査性：</strong>なぜその案件を追う／見送る判断をしたのか、あとから説明できる記録。</p></div>
+</div>
+<p>これらは、個別には実装可能です。しかし、公募営業の担当者が毎週使うには、設定、例外処理、権限、出力契約、テスト、ドキュメントが必要です。ここで製品の価値が出ます。</p>
+<div class="quote"><p>汎用Agentは作業を実行できる。PSPA-Screenは、その作業を反復可能な社内プロセスとして固定する。</p></div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Governance gap</div>
+<h2>公共案件では、生成物よりも根拠の管理が重い</h2>
+<p>公共調達は、単に魅力的な提案文を作ればよい領域ではありません。参加資格、証明資料、仕様適合、契約条件、開示可能な実績、価格根拠、過去応募との整合性が問われます。</p>
+<p>AI利用に関する公的ガイダンスも、単なるツール選定ではなく、導入、文書化、透明性、リスク管理を重視しています。英国政府のAI PlaybookやAlgorithmic Transparency Recording Standard、EU AI Officeの説明は、AIの利用を制度・説明責任・監督の文脈で扱っています。<sup class="ref"><a href="#src-4">[4]</a></sup><sup class="ref"><a href="#src-5">[5]</a></sup><sup class="ref"><a href="#src-6">[6]</a></sup></p>
+<p>これは発注者側AIに限った話ではありません。応札者側でも、提出物に虚偽・未検証・守秘未確認の事実が混入すれば、営業効率化の利得はすぐに消えます。</p>
+<div class="gov"><p>PSPA-Screenの二大原則は、「書いてある ≠ 検証済み」「提出した ≠ 証拠あり」です。これは単なる注意書きではなく、fact ledger、bidding ledger、pre-submission gate という実装に落ちています。</p></div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Positioning</div>
+<h2>PSPA-Screenは「AI代替不可」ではなく「実装圧縮」で売る</h2>
+<p>最も防御しやすい訴求は、次の形です。</p>
+<div class="thesis"><p>Agentic AIは、公募案件インテリジェンスの成果物を生成するコストを下げる。<br/>PSPA-Screenは、その成果物を実務で使える状態にするコストを下げる。</p></div>
+<p>ここでいう実務で使える状態とは、案件を見つけることだけではありません。自社の資格・実績・体制に照らして評価し、証拠のある事実だけを外部提出物に使い、判断履歴を残し、落札結果から価格と競争環境を学習し、次回のGo／No-Goへ戻す状態です。</p>
+<div class="twocol">
+<div class="mini-panel"><h4>汎用Agentに残りやすい負担</h4><ul><li>毎回の文脈投入</li><li>プロンプトと評価軸の属人化</li><li>未検証ファクトの混入</li><li>ログ・台帳・証跡の分散</li><li>ツール連携の保守</li></ul></div>
+<div class="mini-panel"><h4>PSPA-Screenが製品化する層</h4><ul><li>principalごとのSSOT</li><li>決定的な派生設定生成</li><li>LLM前のルールトリアージ</li><li>提出前ファクトゲート</li><li>応募・落札履歴の再利用</li></ul></div>
+</div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Limits</div>
+<h2>過剰に言わない方がよいこと</h2>
+<p>PSPA-Screenは、現時点で全ての公共調達を網羅するものではありません。対象はアダプタ実装とprincipal設定に依存します。機関サイトの構造変更、認証ポータル、メール請求、PDF品質、OCR、LLM費用、法務上のスクレイピング許容範囲は、継続的な保守対象です。</p>
+<p>また、スコアは判断支援であって、受注可能性や法的適合性を保証しません。落札結果の「1者応札」「短公告期間」「随契」等も、確定的な不正シグナルではなく、未検証の分析として扱う必要があります。</p>
+<div class="note"><strong>訴求上の境界</strong><p>「AIにはできない」ではなく、「AIで作れるが、業務として安全に回すには実装・設定・検証・保守が必要で、その部分を製品化している」と表現するのが妥当です。</p></div>
+</div>
+<hr class="rule"/>
+<div class="container measure block">
+<div class="eyebrow">Conclusion</div>
+<h2>価値は、賢い回答ではなく、判断の再利用にある</h2>
+<p>公募案件営業では、毎回新しい案件を読む一方で、判断に使う企業側の事実、資格、体制、過去実績、証拠資料は繰り返し使われます。汎用Agentic AIは、その都度の読解と生成を速くします。しかし、再利用されるべき文脈を正本化し、未検証情報を止め、判断履歴を次に戻す仕組みまでは、利用者が設計しなければなりません。</p>
+<p>PSPA-Screenが提供するのは、その設計済みの運用層です。公告取得、ルールトリアージ、4軸評価、Principal Pack、Compiler、ファクト台帳、提出前ゲート、落札結果インテリジェンス、Webコンソールを組み合わせ、公共案件営業を単発のAI作業から反復可能な業務へ移す。</p>
+<p>したがって、Agentic AI時代にPSPA-Screenが持つ価値は、AIを否定することではありません。AIの能力を前提に、その能力を公共案件営業で使える形に固定することです。</p>
+</div>
+<div class="container measure block">
+<div class="eyebrow">Sources</div>
+<h2>参考資料</h2>
+<div class="source-list">
+<div class="source-item" id="src-1"><a href="../docs/research/Why_PSPA-Screen_Still_Has_Value_in_an_Era_of_Agentic_AI.md" rel="noopener" target="_blank">Deep Research: Why PSPA-Screen Still Has Value in an Era of Agentic AI</a><p>本稿の基礎調査。Agentic AIで可能なことと、実務導入・検証・監査・文脈管理の制約を分けて整理。</p></div>
+<div class="source-item" id="src-2"><a href="../docs/product/architecture.md" rel="noopener" target="_blank">PSPA-Screen architecture.md</a><p>Product / Principal Pack / Compiler、principal名前空間、決定的射影、主体非依存設計。</p></div>
+<div class="source-item" id="src-3"><a href="../docs/product/data_governance.md" rel="noopener" target="_blank">PSPA-Screen data_governance.md</a><p>ファクト台帳、応募台帳、提出前ゲート。「書いてある ≠ 検証済み」「提出した ≠ 証拠あり」。</p></div>
+<div class="source-item" id="src-4"><a href="https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government" rel="noopener" target="_blank">UK Government, AI Playbook for the UK Government</a><p>政府におけるAIの能力、限界、リスク、選定・調達・導入に関する実務ガイダンス。</p></div>
+<div class="source-item" id="src-5"><a href="https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub" rel="noopener" target="_blank">UK Government, Algorithmic Transparency Recording Standard Hub</a><p>公的部門におけるアルゴリズム利用の透明性記録標準。</p></div>
+<div class="source-item" id="src-6"><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-office" rel="noopener" target="_blank">European Commission, European AI Office</a><p>AI Actの実装支援、汎用AIモデルの規則、評価、ガイダンス、監督に関するEU側の説明。</p></div>
+<div class="source-item" id="src-7"><a href="../docs/product/award_intelligence.md" rel="noopener" target="_blank">PSPA-Screen award_intelligence.md</a><p>落札結果を価格妥当性、勝ちパターン、競合・パートナー候補選別へ用いるサブパイプライン設計。</p></div>
+</div>
+<div class="note"><strong>調査上の留意点</strong><p>本稿はPSPA-Screenの現行リポジトリ調査に基づく製品訴求ドラフトです。外部AIガバナンス資料は、公共案件領域で「できること」と「運用できること」を分ける補助材料として用いています。</p></div>
+</div>
+<div class="container measure block">
+<div class="cta-panel">
+<div class="eyebrow">Design Partner</div>
+<h2>AIでできる公募案件調査を、業務として回す</h2>
+<p>PSPA-Screenは、公共案件を継続的に評価したい企業向けに、案件取得、資格レディネス、Go／No-Go評価、証拠管理、提出前ファクトチェック、落札結果分析を一つの運用にまとめます。</p>
+<p>現在、招待制・個別契約によるclosed SaaSとしての提供を準備しています。</p>
+<div class="cta-actions"><a class="btn btn-primary" href="index.html#contact">設計パートナー相談</a><a class="btn btn-secondary" href="index.html">サービス内容を見る</a></div>
+</div>
+</div>
+</article>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<a class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"><svg fill="none" viewbox="0 0 24 24"><path d="M4 5.5h16M4 12h10M4 18.5h7" stroke="#B8F0FF" stroke-linecap="round" stroke-width="1.7"></path><circle cx="18" cy="12" r="2.2" stroke="#A78BFA" stroke-width="1.6"></circle></svg></span><span>PSPA-Screen</span></a>
+<p class="small" style="margin-top:10px">Pre-α / 招待制closed SaaSとして提供準備中</p>
+</div>
+<div class="footer-links">
+<a href="index.html#capabilities">機能</a><a href="index.html#delivery">提供形態</a><a href="index.html#roadmap">ロードマップ</a><a href="index.html#pricing">料金案</a><a href="column.html">コラム：公共調達入門</a><a href="column2.html">コラム：応札促進の意義</a><a href="column3.html">コラム：Agentic AI時代の価値</a><a href="index.html#contact">導入相談</a><a href="mailto:yolcoyama@gmail.com">お問い合わせ</a>
+</div>
+</div>
+<p class="small" style="margin-top:18px">本コラムは、Agentic AI時代におけるPSPA-Screenの製品価値を、現行実装と公開・内部資料に基づいて整理したものです。個別案件の応札判断、契約レビュー、提出可否は利用企業が個別に判断する必要があります。© 2026 icefog.</p>
+</div>
+</footer>
+</body>
+</html>
